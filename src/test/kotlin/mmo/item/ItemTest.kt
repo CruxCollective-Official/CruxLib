@@ -21,8 +21,8 @@ class ItemTest {
         val meta = MetaData()
 
         meta[testKey] = "value"
-        item[metaData] = meta
+        item.metaData = meta
 
-        assertEquals("value", item[metaData][testKey])
+        assertEquals("value", item.metaData[testKey])
     }
 }
