@@ -1,7 +1,6 @@
 package mmo.item
 
 data class Item(
-    val type: ItemType
-) {
-    var metaData: MetaData = MetaData()
-}
+    val type: ItemType,
+    val metaData: MetaData = MetaData()
+)
