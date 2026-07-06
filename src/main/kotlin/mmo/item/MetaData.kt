@@ -12,3 +12,5 @@ class MetaData {
         return map[key] as V
     }
 }
+
+class MetaDataKey<V>
