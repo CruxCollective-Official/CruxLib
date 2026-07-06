@@ -1,4 +1,3 @@
 package mmo.item
 
-interface ItemType {
-}
+interface ItemType

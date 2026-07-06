@@ -1,4 +1,3 @@
 package mmo.item
 
-class MetaDataKey<V> {
-}
+class MetaDataKey<V>

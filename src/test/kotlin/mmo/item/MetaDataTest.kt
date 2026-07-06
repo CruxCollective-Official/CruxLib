@@ -10,8 +10,8 @@ class MetaDataTest {
     fun `put and get value`() {
         val meta = MetaData()
 
-        meta.put(testKey, "value")
+        meta[testKey] = "value"
 
-        assertEquals("value", meta.get(testKey))
+        assertEquals("value", meta[testKey])
     }
 }
