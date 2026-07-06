@@ -1,5 +1,6 @@
 package mmo.item
 
+import dummy.DummyItem
 import org.junit.jupiter.api.Test
 import kotlin.test.assertEquals
 
