@@ -14,10 +14,11 @@ class StatusContainerTest {
     private val testKey = StatusModifierKey(status, statusStepType, calculateType)
 
     @Test
-    fun `put and get status modifier value`() {
+    fun `add and get status modifier value`() {
         val container = StatusContainer()
 
-        container.put(testKey, 10.0)
-        assertEquals(10.0, container.get(testKey))
+        container.add(testKey, 10.0)
+        container.add(testKey, 10.0)
+        assertEquals(20.0, container.get(testKey))
     }
 }

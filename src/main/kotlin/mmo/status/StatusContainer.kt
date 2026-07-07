@@ -7,7 +7,7 @@ class StatusContainer(
         return statusModifierMap[key] ?: 0.0
     }
 
-    fun put(key: StatusModifierKey, value: Double) {
-        statusModifierMap[key] = value
+    fun add(key: StatusModifierKey, value: Double) {
+        statusModifierMap[key] = get(key) + value
     }
 }
