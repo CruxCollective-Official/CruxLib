@@ -2,12 +2,13 @@ package mmo.registry
 
 class Registry<K, V>(
     private val registryMap: MutableMap<K, V> = mutableMapOf()
-) {
+) : ImmutableRegistry<K, V> {
+
     fun register(key: K, element: V) {
         registryMap[key] = element
     }
 
-    fun get(key: K): V {
+    override fun get(key: K): V {
         return registryMap[key]!!
     }
 }
