@@ -12,8 +12,8 @@ class RegistryContainerTest {
 
         val registry = Registry<String, Int>()
         registry.register("test", 1)
-        registryContainer.set(registryTypeKey, registry)
+        registryContainer[registryTypeKey] = registry
 
-        assertEquals(1, registryContainer.get(registryTypeKey).get("test"))
+        assertEquals(1, registryContainer[registryTypeKey].get("test"))
     }
 }
