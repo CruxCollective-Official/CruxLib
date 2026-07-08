@@ -1,6 +1,6 @@
 package mmo.registry
 
-class Registry<K, V>(
+internal class Registry<K, V>(
     private val registryMap: MutableMap<K, V> = mutableMapOf()
 ) : ImmutableRegistry<K, V> {
 
@@ -11,4 +11,8 @@ class Registry<K, V>(
     override fun get(key: K): V {
         return registryMap[key]!!
     }
+}
+
+interface ImmutableRegistry<K, V> {
+    fun get(key: K): V
 }
