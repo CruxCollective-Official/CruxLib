@@ -10,17 +10,13 @@ class RegistryBuilderTest {
     fun `registry builder supports build and add`() {
         val builder = RegistryBuilder()
 
-        val registry1 = Registry<String, Int>()
-        val registry2 = Registry<String, Int>()
-
-        registry1.register("one", 1)
-        registry1.register("two", 2)
-
-        builder.add(key, registry1)
-        builder.add(key, registry2)
+        val regi = BuilderElementRegistry<String, Int>()
+        regi.register("one", 1)
+        regi.register("two", 2)
+        builder.add(key, regi)
 
         val registry = builder.build(key)
-        assertEquals(1, registry["one"])
-        assertEquals(2, registry["two"])
+        assertEquals(1, registry.get("one"))
+        assertEquals(2, registry.get("two"))
     }
 }
