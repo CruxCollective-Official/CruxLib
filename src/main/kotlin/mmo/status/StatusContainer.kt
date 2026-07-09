@@ -10,4 +10,48 @@ class StatusContainer(
     fun add(key: StatusModifierKey, value: Double) {
         statusModifierMap[key] = get(key) + value
     }
+
+    fun copy(): StatusContainer {
+        val newMap = HashMap<StatusModifierKey, Double>()
+        for ((key, value) in statusModifierMap) {
+            newMap[key] = value
+        }
+        return StatusContainer(newMap)
+    }
+
+    fun filterStatus(status: Status): StatusContainer {
+        val newMap = HashMap<StatusModifierKey, Double>()
+        for ((key, value) in statusModifierMap) {
+            if (key.status == status) {
+                newMap[key] = value
+            }
+        }
+        return StatusContainer(newMap)
+    }
+
+    fun filterStatusStepType(statusStepType: StatusStepType): StatusContainer {
+        val newMap = HashMap<StatusModifierKey, Double>()
+        for ((key, value) in statusModifierMap) {
+            if (key.statusStepType == statusStepType) {
+                newMap[key] = value
+            }
+        }
+        return StatusContainer(newMap)
+    }
+
+    fun filterCalculateType(calculateType: CalculateType): StatusContainer {
+        val newMap = HashMap<StatusModifierKey, Double>()
+        for ((key, value) in statusModifierMap) {
+            if (key.calculateType == calculateType) {
+                newMap[key] = value
+            }
+        }
+        return StatusContainer(newMap)
+    }
+
+    fun merge(container: StatusContainer) {
+        for ((key) in statusModifierMap) {
+            statusModifierMap[key] = get(key) + container.get(key)
+        }
+    }
 }
