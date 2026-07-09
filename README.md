@@ -15,5 +15,5 @@ RPGゲームやその他ゲームを含めた様々な実装の負荷を下げ�
 以下の内容をbuild.gradleに追加してください
 > dependencies
 ```
-implementation("org.crux:crux-lib:x.x.x-SNAPSHOT")
+implementation("org.crux:crux-lib:x.x.x")
 ```
