@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "org.crux"
-version = "0.3.0-SNAPSHOT"
+version = "0.3.0"
 
 repositories {
 
@@ -30,7 +30,7 @@ tasks.test {
 
 publishing {
     publications {
-        create<MavenPublication>("gpr") {
+        create<MavenPublication>("crux") {
             artifactId = "crux-lib"
 
             from(components["java"])
@@ -39,16 +39,9 @@ publishing {
 
     repositories {
         maven {
-            name = "GitHubPackages"
-            url = uri("https://maven.pkg.github.com/CruxCollective-Official/CruxLib")
+            name = "GitHubPages"
 
-            credentials {
-                username = project.findProperty("GITHUB_ACTOR")?.toString()
-                    ?: System.getenv("GITHUB_ACTOR")
-
-                password = project.findProperty("GITHUB_TOKEN")?.toString()
-                    ?: System.getenv("GITHUB_TOKEN")
-            }
+            url = uri(layout.projectDirectory.dir("docs"))
         }
     }
 }
