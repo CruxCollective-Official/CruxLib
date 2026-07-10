@@ -3,7 +3,7 @@
   "component": {
     "group": "org.crux",
     "module": "crux-lib",
-    "version": "0.4.0",
+    "version": "0.5.0",
     "attributes": {
       "org.gradle.status": "release"
     }
@@ -36,13 +36,13 @@
       ],
       "files": [
         {
-          "name": "crux-lib-0.4.0.jar",
-          "url": "crux-lib-0.4.0.jar",
-          "size": 17815,
-          "sha512": "743695b9df026791e8c881051b9f6453d68ef078b886ccc1bc376444a7cade4c1c5c9fba5499ec37086a4097b3a856abe8384f113f66c5485afcb84be2dd98c6",
-          "sha256": "30599539947b675967083ca43624e087fea87fb92118704717ac420523793666",
-          "sha1": "57aac2f73610b302fd9dacdcbf5043e84d5a02fd",
-          "md5": "940b709c36fea2a21759c84b143bb3e6"
+          "name": "crux-lib-0.5.0.jar",
+          "url": "crux-lib-0.5.0.jar",
+          "size": 30144,
+          "sha512": "7ecc74b22e6f71eb67ecc4ebb0eae575eca0db79cf9803ba2aac2c2589135c2352c8be817889d2fd5b36c53aebb572682b959ba766e5fd164f63204eac9c78be",
+          "sha256": "1f5aebe44abaa412ed1a6da1b376dd4c883df828d2d1765c97bbfe1963d5da4b",
+          "sha1": "6ad7fce233330236768a800f127311358c124fab",
+          "md5": "3880fa131bd0f577e8bd3034140ea151"
         }
       ]
     },
@@ -68,13 +68,13 @@
       ],
       "files": [
         {
-          "name": "crux-lib-0.4.0.jar",
-          "url": "crux-lib-0.4.0.jar",
-          "size": 17815,
-          "sha512": "743695b9df026791e8c881051b9f6453d68ef078b886ccc1bc376444a7cade4c1c5c9fba5499ec37086a4097b3a856abe8384f113f66c5485afcb84be2dd98c6",
-          "sha256": "30599539947b675967083ca43624e087fea87fb92118704717ac420523793666",
-          "sha1": "57aac2f73610b302fd9dacdcbf5043e84d5a02fd",
-          "md5": "940b709c36fea2a21759c84b143bb3e6"
+          "name": "crux-lib-0.5.0.jar",
+          "url": "crux-lib-0.5.0.jar",
+          "size": 30144,
+          "sha512": "7ecc74b22e6f71eb67ecc4ebb0eae575eca0db79cf9803ba2aac2c2589135c2352c8be817889d2fd5b36c53aebb572682b959ba766e5fd164f63204eac9c78be",
+          "sha256": "1f5aebe44abaa412ed1a6da1b376dd4c883df828d2d1765c97bbfe1963d5da4b",
+          "sha1": "6ad7fce233330236768a800f127311358c124fab",
+          "md5": "3880fa131bd0f577e8bd3034140ea151"
         }
       ]
     },
@@ -88,13 +88,13 @@
       },
       "files": [
         {
-          "name": "crux-lib-0.4.0-sources.jar",
-          "url": "crux-lib-0.4.0-sources.jar",
-          "size": 3728,
-          "sha512": "2fe268ca4a5d0083985de076cc39f9b7fbaf61163ffe4f77121a5e2b1764b07d818258d5e2b88b31fed03bb4fc7b67d148eb19107edc5ccb17e97c6e5e538b6a",
-          "sha256": "b3b8bc9d310e23cc07bb25edafbe91ff4e4e4ffea91f746b1225d8aea3ea3e8c",
-          "sha1": "3b9795d822aed99483ebb7e3b3f908062f50a1aa",
-          "md5": "16b86bf3c94abe93bb5cd39bc988a142"
+          "name": "crux-lib-0.5.0-sources.jar",
+          "url": "crux-lib-0.5.0-sources.jar",
+          "size": 7221,
+          "sha512": "4409f628c9d9b2faa04db641d45faff5d0246fb1b486a952136fca1f194c1916cbd9100c885580b355c638137325bb89fb4d6bfde743c7a2e83b479e468c8162",
+          "sha256": "cb3b28220c1dd0ce11f70548cd178bb4c2fcf189e12bc1a24f4d1ad73cb01785",
+          "sha1": "c052e49fc661350af84586b8d8d7cda48b50083d",
+          "md5": "855f73f7fb3917760ee3d07ac26071fa"
         }
       ]
     }
