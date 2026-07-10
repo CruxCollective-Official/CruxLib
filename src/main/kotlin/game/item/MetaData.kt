@@ -1,4 +1,4 @@
-package mmo.item
+package game.item
 
 class MetaData {
     private val map = mutableMapOf<MetaDataKey<*>, Any>()

@@ -1,4 +1,6 @@
-package mmo.registry
+package system.registry
+
+import kotlin.collections.iterator
 
 class RegistryBuilder {
     private val registryElementMap: MutableMap<RegistryTypeKey<*, *>, MutableList<BuilderElementRegistry<*, *>>> = mutableMapOf()

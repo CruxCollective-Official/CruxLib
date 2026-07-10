@@ -1,4 +1,4 @@
-package mmo.registry
+package system.registry
 
 import kotlin.test.Test
 import kotlin.test.assertEquals

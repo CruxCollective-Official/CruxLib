@@ -1,4 +1,4 @@
-package mmo.registry
+package system.registry
 
 import org.junit.jupiter.api.Test
 import kotlin.test.assertEquals

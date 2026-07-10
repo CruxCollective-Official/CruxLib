@@ -1,4 +1,4 @@
-package mmo.status
+package game.status
 
 data class StatusModifierKey(
     val status: Status,

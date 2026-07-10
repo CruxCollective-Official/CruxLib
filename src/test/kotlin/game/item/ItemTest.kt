@@ -1,4 +1,4 @@
-package mmo.item
+package game.item
 
 import dummy.DummyItem
 import org.junit.jupiter.api.Test

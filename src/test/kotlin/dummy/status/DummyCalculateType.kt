@@ -1,6 +1,6 @@
 package dummy.status
 
-import mmo.status.CalculateType
+import game.status.CalculateType
 
 enum class DummyCalculateType(
     val type: CalculateType

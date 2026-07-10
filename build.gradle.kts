@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "org.crux"
-version = "0.4.0"
+version = "0.5.0"
 
 repositories {
 

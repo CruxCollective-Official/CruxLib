@@ -1,6 +1,6 @@
 package dummy.status
 
-import mmo.status.Status
+import game.status.Status
 
 class DummyStatus : Status {
     override fun getPath(): String {

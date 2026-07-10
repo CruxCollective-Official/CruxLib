@@ -1,4 +1,4 @@
-package mmo.status
+package game.status
 
 interface Status {
     fun getPath(): String

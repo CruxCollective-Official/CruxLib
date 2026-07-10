@@ -1,4 +1,4 @@
-package mmo.status
+package game.status
 
 class StatusContainer(
     private val statusModifierMap: HashMap<StatusModifierKey, Double> = hashMapOf()

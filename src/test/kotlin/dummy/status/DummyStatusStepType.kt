@@ -1,6 +1,6 @@
 package dummy.status
 
-import mmo.status.StatusStepType
+import game.status.StatusStepType
 
 enum class DummyStatusStepType(
     val type: StatusStepType

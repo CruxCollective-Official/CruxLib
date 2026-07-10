@@ -1,4 +1,4 @@
-package mmo.status
+package game.status
 
 import dummy.status.DummyCalculateType
 import dummy.status.DummyStatus

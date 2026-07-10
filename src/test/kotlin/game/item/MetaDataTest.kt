@@ -1,4 +1,4 @@
-package mmo.item
+package game.item
 
 import org.junit.jupiter.api.Test
 import kotlin.test.assertEquals

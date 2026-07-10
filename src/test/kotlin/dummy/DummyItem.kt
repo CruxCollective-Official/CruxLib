@@ -1,6 +1,6 @@
 package dummy
 
-import mmo.item.ItemType
+import game.item.ItemType
 
 class DummyItem : ItemType {
 

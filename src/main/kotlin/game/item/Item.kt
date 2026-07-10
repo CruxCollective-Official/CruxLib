@@ -1,4 +1,4 @@
-package mmo.item
+package game.item
 
 data class Item(
     val type: ItemType,

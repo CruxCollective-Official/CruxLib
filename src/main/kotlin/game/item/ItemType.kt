@@ -1,3 +1,3 @@
-package mmo.item
+package game.item
 
 interface ItemType
