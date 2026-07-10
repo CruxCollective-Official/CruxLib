@@ -1,5 +1,7 @@
 package game.status
 
+import system.Key
+
 interface Status {
-    fun getPath(): String
+    fun getPath(): Key
 }

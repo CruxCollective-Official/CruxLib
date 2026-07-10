@@ -2,6 +2,4 @@ package dummy
 
 import game.item.ItemType
 
-class DummyItem : ItemType {
-
-}
+class DummyItem : ItemType

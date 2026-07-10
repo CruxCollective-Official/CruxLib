@@ -4,5 +4,5 @@ data class Key(
     val namespace: String,
     val path: String
 ) {
-    val identifier: String get() = "$namespace:$path"
+    val identifier: String get() = "${namespace}_${path}"
 }

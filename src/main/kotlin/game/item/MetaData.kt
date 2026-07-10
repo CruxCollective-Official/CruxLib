@@ -1,5 +1,7 @@
 package game.item
 
+import system.Key
+
 class MetaData {
     private val map = mutableMapOf<MetaDataKey<*>, Any>()
 
@@ -13,4 +15,6 @@ class MetaData {
     }
 }
 
-class MetaDataKey<V>
+data class MetaDataKey<V>(
+    val key: Key
+)

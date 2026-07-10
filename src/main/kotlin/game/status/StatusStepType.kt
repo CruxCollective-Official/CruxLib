@@ -1,3 +1,5 @@
 package game.status
 
-data class StatusStepType(val path: String)
+import system.Key
+
+data class StatusStepType(val key: Key)

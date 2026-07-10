@@ -9,6 +9,6 @@ class KeyTest {
         val key = Key("test", "path")
         assertEquals("test", key.namespace)
         assertEquals("path", key.path)
-        assertEquals("test:path", key.identifier)
+        assertEquals("test_path", key.identifier)
     }
 }
