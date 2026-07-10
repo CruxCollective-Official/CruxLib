@@ -57,4 +57,12 @@ class StatusContainerTest {
 
         assertEquals(20.0, container1.get(testKey))
     }
+
+    @Test
+    fun `can retrieve the status container for the string data`() {
+        val container = StatusContainer()
+        container.add(testKey, 10.0)
+
+        assertEquals("status_container[status_modifier_key:dummy_status:test:add:10.0]", container.getAllPaths())
+    }
 }
