@@ -14,4 +14,9 @@ class MetaDataTest {
 
         assertEquals("value", meta[testKey])
     }
+
+    @Test
+    fun `can get the path of the item`() {
+        val meta = MetaData()
+    }
 }

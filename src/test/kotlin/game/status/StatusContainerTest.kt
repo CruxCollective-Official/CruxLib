@@ -63,6 +63,6 @@ class StatusContainerTest {
         val container = StatusContainer()
         container.add(testKey, 10.0)
 
-        assertEquals("status_container[status_modifier_key:dummy_status:test:add:10.0]", container.getAllPaths())
+        assertEquals("status_container[test:status_modifier_key:dummy_status:test:add:10.0]", container.getAllPaths())
     }
 }
