@@ -1,4 +1,4 @@
-internal data class Key(
+data class Key(
     val namespace: String,
     val path: String
 ) {

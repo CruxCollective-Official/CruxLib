@@ -5,5 +5,5 @@ import mmo.status.StatusStepType
 enum class DummyStatusStepType(
     val type: StatusStepType
 ) {
-    TEST(StatusStepType())
+    TEST(StatusStepType("test"))
 }

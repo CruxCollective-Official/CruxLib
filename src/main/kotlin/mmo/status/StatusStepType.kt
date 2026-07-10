@@ -1,3 +1,3 @@
 package mmo.status
 
-class StatusStepType
+data class StatusStepType(val path: String)

@@ -1,3 +1,5 @@
 package mmo.status
 
-interface Status
+interface Status {
+    fun getPath(): String
+}

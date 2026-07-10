@@ -54,4 +54,13 @@ class StatusContainer(
             statusModifierMap[key] = get(key) + container.get(key)
         }
     }
+
+    fun getAllPaths(): String {
+        var path = "status_container"
+
+        for ((key, value) in statusModifierMap) {
+            path += "[${key.getPaths()}:${value}]"
+        }
+        return path
+    }
 }

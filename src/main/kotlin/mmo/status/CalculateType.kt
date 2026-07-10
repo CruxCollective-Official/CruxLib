@@ -1,3 +1,3 @@
 package mmo.status
 
-class CalculateType
+data class CalculateType(val path: String)
