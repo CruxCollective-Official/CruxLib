@@ -1,6 +1,6 @@
-package system.convert
+package org.crux.system.convert
 
-import game.status.StatusContainer
+import org.crux.game.status.StatusContainer
 
 class StatusContainerConvertType : ConvertType<StatusContainer> {
     override fun getKeyStringTag(): String {

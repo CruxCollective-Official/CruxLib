@@ -1,4 +1,4 @@
-package system
+package org.crux.system
 
 data class Key(
     val namespace: String,

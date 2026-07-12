@@ -1,4 +1,4 @@
-package game.status
+package org.crux.game.status
 
 /**
  * ステータス補正値（Modifier）を一括管理するコンテナクラス。
