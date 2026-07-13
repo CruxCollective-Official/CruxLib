@@ -1,3 +1,7 @@
 package org.crux.game.item
 
-interface ItemType
+import org.crux.system.key.Key
+
+interface ItemType {
+    fun getTypeName(): Key
+}

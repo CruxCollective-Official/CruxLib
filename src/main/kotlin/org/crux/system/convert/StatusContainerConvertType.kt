@@ -12,7 +12,7 @@ class StatusContainerConvertType : ConvertType<StatusContainer> {
         var dataString = "${getKeyStringTag()}>"
 
         for ((key, value) in source.getMap()) {
-            dataString += "[${key.status.getPath()},${key.statusStepType.key.identifier},${key.calculateType.key.identifier}:$value]"
+            dataString += "[${key.status.getPath().identifier},${key.statusStepType.key.identifier},${key.calculateType.key.identifier}:$value]"
         }
 
         return dataString

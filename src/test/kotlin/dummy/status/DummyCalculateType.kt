@@ -6,5 +6,6 @@ import org.crux.system.key.createCruxKey
 enum class DummyCalculateType(
     val type: CalculateType
 ) {
-    ADD(CalculateType(createCruxKey("add")))
+    ADDITION(CalculateType(createCruxKey("addition"))),
+    MULTIPLICATION(CalculateType(createCruxKey("multiplication"))),
 }

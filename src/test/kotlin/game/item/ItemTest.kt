@@ -13,7 +13,7 @@ class ItemTest {
 
     @Test
     fun `creates item with correct type`() {
-        val item = Item(itemType)
+        val item = Item(itemType, 64, 1)
         assertEquals(itemType, item.type)
     }
 
@@ -21,7 +21,7 @@ class ItemTest {
     fun `creates item containing metadata`() {
         val testKey = MetaDataKey<String>(createCruxKey("test"))
 
-        val item = Item(itemType)
+        val item = Item(itemType, 64, 1)
         val meta = item.metaData
 
         meta[testKey] = "value"

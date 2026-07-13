@@ -11,7 +11,7 @@ import kotlin.collections.iterator
  * @property statusModifierMap ステータス補正キーと補正値を保持する内部マップ。デフォルトは空のマップ。
  */
 class StatusContainer(
-    private val statusModifierMap: HashMap<StatusModifierKey, Double> = hashMapOf()
+    private val statusModifierMap: MutableMap<StatusModifierKey, Double> = linkedMapOf()
 ) {
     /**
      * 指定されたキーに対応するステータス補正値を取得します。
@@ -40,7 +40,7 @@ class StatusContainer(
      * @return 独立した新しい [StatusContainer] インスタンス
      */
     fun copy(): StatusContainer {
-        return StatusContainer(HashMap(statusModifierMap))
+        return StatusContainer(HashMap(statusModifierMap).toMutableMap())
     }
 
     /**
@@ -51,7 +51,7 @@ class StatusContainer(
      */
     fun filterStatus(status: Status): StatusContainer {
         val filteredMap = statusModifierMap.filter { it.key.status == status }
-        return StatusContainer(HashMap(filteredMap))
+        return StatusContainer(HashMap(filteredMap).toMutableMap())
     }
 
     /**
@@ -62,7 +62,7 @@ class StatusContainer(
      */
     fun filterStatusStepType(statusStepType: StatusStepType): StatusContainer {
         val filteredMap = statusModifierMap.filter { it.key.statusStepType == statusStepType }
-        return StatusContainer(HashMap(filteredMap))
+        return StatusContainer(HashMap(filteredMap).toMutableMap())
     }
 
     /**
@@ -73,7 +73,7 @@ class StatusContainer(
      */
     fun filterCalculateType(calculateType: CalculateType): StatusContainer {
         val filteredMap = statusModifierMap.filter { it.key.calculateType == calculateType }
-        return StatusContainer(HashMap(filteredMap))
+        return StatusContainer(HashMap(filteredMap).toMutableMap())
     }
 
     /**
@@ -93,7 +93,7 @@ class StatusContainer(
      *
      * @return ステータス補正キーと補正値のペアを持つ [Map]
      */
-    fun getMap(): Map<StatusModifierKey, Double> {
-        return statusModifierMap.toMap()
+    fun getMap(): MutableMap<StatusModifierKey, Double> {
+        return statusModifierMap.toMap().toMutableMap()
     }
 }

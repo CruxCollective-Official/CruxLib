@@ -14,7 +14,7 @@ import kotlin.test.assertEquals
 class StatusContainerTest {
     private val status: Status = DummyStatus()
     private val statusStepType: StatusStepType = DummyStatusStepType.TEST.type
-    private val calculateType: CalculateType = DummyCalculateType.ADD.type
+    private val calculateType: CalculateType = DummyCalculateType.ADDITION.type
 
     private val testKey = StatusModifierKey(status, statusStepType, calculateType)
 
