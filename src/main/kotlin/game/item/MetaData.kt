@@ -1,6 +1,6 @@
 package game.item
 
-import system.Key
+import system.key.Key
 
 class MetaData {
     private val map = mutableMapOf<MetaDataKey<*>, Any>()

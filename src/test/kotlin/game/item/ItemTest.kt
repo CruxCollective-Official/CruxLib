@@ -2,7 +2,7 @@ package game.item
 
 import dummy.DummyItem
 import org.junit.jupiter.api.Test
-import system.Key
+import system.key.createCruxKey
 import kotlin.test.assertEquals
 
 class ItemTest {
@@ -16,7 +16,7 @@ class ItemTest {
 
     @Test
     fun `creates item containing metadata`() {
-        val testKey = MetaDataKey<String>(Key("curx", "test"))
+        val testKey = MetaDataKey<String>(createCruxKey("test"))
 
         val item = Item(itemType)
         val meta = item.metaData

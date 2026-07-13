@@ -1,10 +1,11 @@
 package game.item
 
 import org.junit.jupiter.api.Test
+import system.key.createCruxKey
 import kotlin.test.assertEquals
 
 class MetaDataTest {
-    private var testKey = MetaDataKey<String>()
+    private var testKey = MetaDataKey<String>(createCruxKey("test"))
 
     @Test
     fun `put and get value`() {

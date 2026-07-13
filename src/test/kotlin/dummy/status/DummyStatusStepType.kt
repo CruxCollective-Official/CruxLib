@@ -1,10 +1,11 @@
 package dummy.status
 
 import game.status.StatusStepType
-import system.Key
+import system.key.createCruxKey
 
 enum class DummyStatusStepType(
-    val type: StatusStepType
+    val type: StatusStepType,
 ) {
-    TEST(StatusStepType(Key("crux", "test")))
+    TEST(StatusStepType(createCruxKey("test"))),
+    ;
 }

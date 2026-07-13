@@ -1,10 +1,10 @@
 package dummy.status
 
 import game.status.CalculateType
-import system.Key
+import system.key.createCruxKey
 
 enum class DummyCalculateType(
     val type: CalculateType
 ) {
-    ADD(CalculateType(Key("crux", "add")))
+    ADD(CalculateType(createCruxKey("add")))
 }
