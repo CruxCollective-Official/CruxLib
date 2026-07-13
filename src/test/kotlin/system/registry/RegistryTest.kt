@@ -1,5 +1,6 @@
 package system.registry
 
+import org.crux.system.registry.Registry
 import kotlin.test.Test
 import kotlin.test.assertEquals
 

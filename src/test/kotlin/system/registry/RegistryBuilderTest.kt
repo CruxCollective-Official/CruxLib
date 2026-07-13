@@ -1,5 +1,8 @@
 package system.registry
 
+import org.crux.system.registry.BuilderElementRegistry
+import org.crux.system.registry.RegistryBuilder
+import org.crux.system.registry.RegistryTypeKey
 import org.junit.jupiter.api.Test
 import kotlin.test.assertEquals
 

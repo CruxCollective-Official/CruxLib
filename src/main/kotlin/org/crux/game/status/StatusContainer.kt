@@ -1,4 +1,6 @@
-package game.status
+package org.crux.game.status
+
+import kotlin.collections.iterator
 
 /**
  * ステータス補正値（Modifier）を一括管理するコンテナクラス。

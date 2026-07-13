@@ -1,4 +1,4 @@
-package game.status
+package org.crux.game.status
 
 data class StatusModifierKey(
     val status: Status,

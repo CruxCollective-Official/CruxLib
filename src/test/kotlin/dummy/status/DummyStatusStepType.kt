@@ -1,7 +1,7 @@
 package dummy.status
 
-import game.status.StatusStepType
-import system.key.createCruxKey
+import org.crux.game.status.StatusStepType
+import org.crux.system.key.createCruxKey
 
 enum class DummyStatusStepType(
     val type: StatusStepType,

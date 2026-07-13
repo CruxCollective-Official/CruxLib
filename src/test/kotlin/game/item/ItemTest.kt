@@ -1,8 +1,11 @@
 package game.item
 
 import dummy.DummyItem
+import org.crux.game.item.Item
+import org.crux.game.item.ItemType
+import org.crux.game.item.MetaDataKey
 import org.junit.jupiter.api.Test
-import system.key.createCruxKey
+import org.crux.system.key.createCruxKey
 import kotlin.test.assertEquals
 
 class ItemTest {

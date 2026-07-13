@@ -1,4 +1,4 @@
-package system.registry
+package org.crux.system.registry
 
 data class Registry<K, V>(
     private val registryMap: MutableMap<K, V> = mutableMapOf()

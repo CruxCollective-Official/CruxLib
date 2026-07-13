@@ -1,6 +1,6 @@
-package game.item
+package org.crux.game.item
 
-import system.key.Key
+import org.crux.system.key.Key
 
 class MetaData {
     private val map = mutableMapOf<MetaDataKey<*>, Any>()

@@ -1,4 +1,4 @@
-package system.key
+package org.crux.system.key
 
 @ConsistentCopyVisibility
 data class Key internal constructor(

@@ -3,6 +3,11 @@ package game.status
 import dummy.status.DummyCalculateType
 import dummy.status.DummyStatus
 import dummy.status.DummyStatusStepType
+import org.crux.game.status.CalculateType
+import org.crux.game.status.Status
+import org.crux.game.status.StatusContainer
+import org.crux.game.status.StatusModifierKey
+import org.crux.game.status.StatusStepType
 import kotlin.test.Test
 import kotlin.test.assertEquals
 

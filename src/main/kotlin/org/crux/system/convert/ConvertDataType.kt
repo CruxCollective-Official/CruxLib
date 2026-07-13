@@ -1,4 +1,4 @@
-package system.convert
+package org.crux.system.convert
 
 /**
  * 異なるデータ型とシリアライズされた文字列との間の相互変換を定義するインターフェース。

@@ -1,5 +1,5 @@
 package dummy
 
-import game.item.ItemType
+import org.crux.game.item.ItemType
 
 class DummyItem : ItemType

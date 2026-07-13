@@ -1,7 +1,7 @@
 package system
 
 import org.junit.jupiter.api.Test
-import system.key.Key
+import org.crux.system.key.Key
 import kotlin.test.assertEquals
 
 class KeyTest {

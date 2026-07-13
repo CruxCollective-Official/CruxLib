@@ -1,4 +1,4 @@
-package game.item
+package org.crux.game.item
 
 /**
  * ゲーム内に存在する個々のアイテムを表すデータクラス。

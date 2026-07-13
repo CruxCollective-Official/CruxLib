@@ -1,10 +1,10 @@
 package system
 
 import org.junit.jupiter.api.Test
-import system.convert.BooleanConvertType
-import system.convert.DoubleConvertType
-import system.convert.IntegerConvertType
-import system.convert.StringConvertType
+import org.crux.system.convert.BooleanConvertType
+import org.crux.system.convert.DoubleConvertType
+import org.crux.system.convert.IntegerConvertType
+import org.crux.system.convert.StringConvertType
 import kotlin.test.assertEquals
 
 class ConvertDataTest {

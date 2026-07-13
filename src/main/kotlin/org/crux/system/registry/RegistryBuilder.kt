@@ -1,4 +1,4 @@
-package system.registry
+package org.crux.system.registry
 
 import kotlin.collections.iterator
 
