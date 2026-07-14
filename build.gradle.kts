@@ -1,33 +1,16 @@
 plugins {
-    kotlin("jvm") version "2.4.0"
-    `java-library`
-    `maven-publish`
+    kotlin("jvm") version "2.4.0" apply false
 }
 
 group = "org.crux"
-version = "0.6.0"
+version = "0.7.0"
 
-repositories {
-
-    mavenCentral()
+subprojects {
+    repositories {
+        mavenCentral()
+    }
 }
-
-dependencies {
-    testImplementation(kotlin("test"))
-}
-
-kotlin {
-    jvmToolchain(21)
-}
-
-java {
-    withSourcesJar()
-}
-
-tasks.test {
-    useJUnitPlatform()
-}
-
+/*
 publishing {
     publications {
         create<MavenPublication>("crux") {
@@ -45,3 +28,4 @@ publishing {
         }
     }
 }
+*/

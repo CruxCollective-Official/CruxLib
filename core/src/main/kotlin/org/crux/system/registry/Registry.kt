@@ -1,6 +1,7 @@
 package org.crux.system.registry
 
-data class Registry<K, V>(
+@ConsistentCopyVisibility
+data class Registry<K, V> internal constructor(
     private val registryMap: MutableMap<K, V> = mutableMapOf()
 ) : ImmutableRegistry<K, V> {
     override fun get(key: K): V {

@@ -18,7 +18,7 @@ class RegistryBuilderTest {
         regi.register("two", 2)
         builder.add(key, regi)
 
-        val registry = builder.build(key)
+        val registry = builder.getBuildRegistry(key)
         assertEquals(1, registry.get("one"))
         assertEquals(2, registry.get("two"))
     }

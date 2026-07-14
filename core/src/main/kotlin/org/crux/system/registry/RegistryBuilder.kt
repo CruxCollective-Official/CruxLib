@@ -6,7 +6,7 @@ class RegistryBuilder {
     private val registryElementMap: MutableMap<RegistryTypeKey<*, *>, MutableList<BuilderElementRegistry<*, *>>> = mutableMapOf()
 
     @Suppress("UNCHECKED_CAST")
-    fun <K, V> build(key: RegistryTypeKey<K, V>): Registry<K, V> {
+    fun <K, V> getBuildRegistry(key: RegistryTypeKey<K, V>): Registry<K, V> {
         val registry: Registry<K, V> = Registry()
         for (builderRegistry in registryElementMap[key] ?: mutableListOf()) {
             for ((k, v) in builderRegistry.registryMap) {
