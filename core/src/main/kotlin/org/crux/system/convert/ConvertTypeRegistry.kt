@@ -1,6 +1,6 @@
 package org.crux.system.convert
 
-import org.crux.CruxRegistryTypeKeys
+import org.crux.core.CruxRegistryTypeKeys
 import org.crux.annotations.Registry
 import org.crux.system.registry.BuilderElementRegistry
 import org.crux.system.registry.RegistryBuilder
@@ -12,9 +12,19 @@ class ConvertTypeRegistry : RegistryProcessor {
         val registry = BuilderElementRegistry<String, ConvertType<*>>()
 
         for (convertType in ConvertTypes.entries) {
-            registry.register(convertType.getKeyStringTag(), convertType)
+            registry.register(convertType.getKeyTag().identifier, convertType)
         }
 
         builder.add(CruxRegistryTypeKeys.CONVERT_TYPE_KEY, registry)
     }
+}
+
+object ConvertTypes {
+    val entries: List<ConvertType<*>> = listOf(
+        IntegerConvertType(),
+        DoubleConvertType(),
+        StringConvertType(),
+        BooleanConvertType(),
+        StatusContainerConvertType()
+    )
 }

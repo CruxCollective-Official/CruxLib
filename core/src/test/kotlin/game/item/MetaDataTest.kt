@@ -3,7 +3,7 @@ package game.item
 import org.crux.game.item.MetaData
 import org.crux.game.item.MetaDataKey
 import org.junit.jupiter.api.Test
-import org.crux.system.key.createCruxKey
+import org.crux.core.createCruxKey
 import kotlin.test.assertEquals
 
 class MetaDataTest {

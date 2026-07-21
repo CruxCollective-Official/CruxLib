@@ -1,10 +1,15 @@
 plugins {
     id("java")
     `java-library`
+    `maven-publish`
 }
 
 repositories {
     mavenCentral()
+}
+
+java {
+    withSourcesJar()
 }
 
 dependencies {
@@ -17,4 +22,21 @@ dependencies {
 
 tasks.test {
     useJUnitPlatform()
+}
+
+publishing {
+    publications {
+        create<MavenPublication>("maven") {
+            artifactId = "crux-processor"
+            from(components["java"])
+        }
+    }
+
+    repositories {
+        maven {
+            name = "GitHubPages"
+
+            url = uri(rootProject.layout.projectDirectory.dir("docs"))
+        }
+    }
 }

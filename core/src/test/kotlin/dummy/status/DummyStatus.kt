@@ -2,7 +2,7 @@ package dummy.status
 
 import org.crux.game.status.Status
 import org.crux.system.key.Key
-import org.crux.system.key.createCruxKey
+import org.crux.core.createCruxKey
 
 class DummyStatus : Status {
     override fun getPath(): Key {

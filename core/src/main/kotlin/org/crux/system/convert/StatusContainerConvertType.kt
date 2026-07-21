@@ -1,15 +1,18 @@
 package org.crux.system.convert
 
+import org.crux.core.KeyManager
+import org.crux.core.createCruxKey
 import org.crux.game.status.StatusContainer
+import org.crux.system.key.Key
 import kotlin.collections.iterator
 
 class StatusContainerConvertType : ConvertType<StatusContainer> {
-    override fun getKeyStringTag(): String {
-        return "status_container"
+    override fun getKeyTag(): Key {
+        return createCruxKey("status_container")
     }
 
     override fun stringConvertLogic(source: StatusContainer): String {
-        var dataString = "${getKeyStringTag()}>"
+        var dataString = "${getKeyTag().identifier}>"
 
         for ((key, value) in source.getMap()) {
             dataString += "[${key.status.getPath().identifier},${key.statusStepType.key.identifier},${key.calculateType.key.identifier}:$value]"
@@ -21,7 +24,7 @@ class StatusContainerConvertType : ConvertType<StatusContainer> {
     //未実装!!!
     override fun dataTypeConvertLogic(source: String): StatusContainer {
         val container = StatusContainer()
-        var dataString = removeTag(getKeyStringTag(), source)
+        var dataString = removeTag(getKeyTag().identifier, source)
 
         return container
     }

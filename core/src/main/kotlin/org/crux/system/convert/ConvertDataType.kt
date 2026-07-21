@@ -1,5 +1,8 @@
 package org.crux.system.convert
 
+import org.crux.core.createCruxKey
+import org.crux.system.key.Key
+
 /**
  * 異なるデータ型とシリアライズされた文字列との間の相互変換を定義するインターフェース。
  *
@@ -9,9 +12,9 @@ interface ConvertType<V> {
     /**
      * データ型を識別するための固有の文字列タグを取得します。
      *
-     * @return 型識別子となる文字列（例: "int", "string"）
+     * @return 型識別子となる文字列（例: "int", "Key"）
      */
-    fun getKeyStringTag(): String
+    fun getKeyTag(): Key
 
     /**
      * 指定されたデータ型のオブジェクトを、型タグ付きの文字列に変換します。
@@ -33,17 +36,19 @@ interface ConvertType<V> {
 
 /**
  * [Int] 型のデータを扱うための [ConvertType] 実装クラス。
- * 形式: "int>値" (例: "int>123")
+ * 形式: "integer>値" (例: "integer>123")
  */
 class IntegerConvertType : ConvertType<Int> {
-    override fun getKeyStringTag(): String { return "int" }
+    override fun getKeyTag(): Key {
+        return createCruxKey("integer")
+    }
 
     override fun stringConvertLogic(source: Int): String {
-        return "${getKeyStringTag()}>$source"
+        return "${getKeyTag().identifier}>$source"
     }
 
     override fun dataTypeConvertLogic(source: String): Int {
-        return removeTag(getKeyStringTag(), source).toInt()
+        return removeTag(getKeyTag().identifier, source).toInt()
     }
 }
 
@@ -52,14 +57,16 @@ class IntegerConvertType : ConvertType<Int> {
  * 形式: "double>値" (例: "double>3.14")
  */
 class DoubleConvertType : ConvertType<Double> {
-    override fun getKeyStringTag(): String { return "double" }
+    override fun getKeyTag(): Key {
+        return createCruxKey("double")
+    }
 
     override fun stringConvertLogic(source: Double): String {
-        return "${getKeyStringTag()}>$source"
+        return "${getKeyTag().identifier}>$source"
     }
 
     override fun dataTypeConvertLogic(source: String): Double {
-        return removeTag(getKeyStringTag(), source).toDouble()
+        return removeTag(getKeyTag().identifier, source).toDouble()
     }
 }
 
@@ -68,14 +75,16 @@ class DoubleConvertType : ConvertType<Double> {
  * 形式: "string>値" (例: "string>hello")
  */
 class StringConvertType : ConvertType<String> {
-    override fun getKeyStringTag(): String { return "string" }
+    override fun getKeyTag(): Key {
+        return createCruxKey("string")
+    }
 
     override fun stringConvertLogic(source: String): String {
-        return "${getKeyStringTag()}>$source"
+        return "${getKeyTag().identifier}>$source"
     }
 
     override fun dataTypeConvertLogic(source: String): String {
-        return removeTag(getKeyStringTag(), source)
+        return removeTag(getKeyTag().identifier, source)
     }
 }
 
@@ -85,17 +94,20 @@ class StringConvertType : ConvertType<String> {
  * 形式: "boolean>1" または "boolean>0"
  */
 class BooleanConvertType : ConvertType<Boolean> {
-    override fun getKeyStringTag(): String { return "boolean" }
+    override fun getKeyTag(): Key {
+        return createCruxKey("boolean")
+    }
 
     override fun stringConvertLogic(source: Boolean): String {
         val byteValue = if (source) "1" else "0"
-        return "${getKeyStringTag()}>$byteValue"
+        return "${getKeyTag().identifier}>$byteValue"
     }
 
     override fun dataTypeConvertLogic(source: String): Boolean {
-        return removeTag(getKeyStringTag(), source) == "1"
+        return removeTag(getKeyTag().identifier, source) == "1"
     }
 }
+
 
 /**
  * 対象の文字列から、指定された型タグと区切り文字（>）を削除します。

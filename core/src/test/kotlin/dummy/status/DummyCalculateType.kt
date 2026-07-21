@@ -1,7 +1,7 @@
 package dummy.status
 
 import org.crux.game.status.CalculateType
-import org.crux.system.key.createCruxKey
+import org.crux.core.createCruxKey
 
 enum class DummyCalculateType(
     val type: CalculateType
