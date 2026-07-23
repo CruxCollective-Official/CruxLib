@@ -24,5 +24,9 @@ maven {
 
 > dependencies
 ```
-implementation("org.crux:crux-lib:x.x.x")
+dependencies {
+    implementation("org.crux:crux-core:x.x.x")
+    implementation("org.crux:crux-annotations:x.x.x")
+    kapt("org.crux:crux-processor:x.x.x")
+}
 ```
