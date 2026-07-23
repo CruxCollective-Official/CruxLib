@@ -25,6 +25,8 @@ publishing {
         create<MavenPublication>("maven") {
             artifactId = "crux-annotations"
             from(components["java"])
+            groupId = "org.crux"
+            version = "0.7.0"
         }
     }
 
