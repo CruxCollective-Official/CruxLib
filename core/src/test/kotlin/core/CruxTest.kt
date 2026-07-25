@@ -13,7 +13,7 @@ class CruxTest {
 
         assertEquals(
             IntegerConvertType().getKeyTag(),
-            registry.get("crux_integer").getKeyTag()
+            registry.get("crux:integer").getKeyTag()
         )
     }
 }

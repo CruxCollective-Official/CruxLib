@@ -8,8 +8,8 @@ class RegistryBuilder {
     @Suppress("UNCHECKED_CAST")
     fun <K, V> getBuildRegistry(key: RegistryTypeKey<K, V>): Registry<K, V> {
         val registry: Registry<K, V> = Registry()
-        for (builderRegistry in registryElementMap[key] ?: mutableListOf()) {
-            for ((k, v) in builderRegistry.registryMap) {
+        for ((registryMap) in registryElementMap[key] ?: mutableListOf()) {
+            for ((k, v) in registryMap) {
                 registry.put(k as K, v as V)
             }
         }

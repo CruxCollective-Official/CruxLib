@@ -16,9 +16,9 @@ class ConvertDataTest {
         val stringConvertData = StringConvertType().stringConvertLogic("test")
         val booleanConvertData = BooleanConvertType().stringConvertLogic(true)
 
-        assertEquals("int>10", integerConvertData)
-        assertEquals("double>10.0", doubleConvertData)
-        assertEquals("string>test", stringConvertData)
-        assertEquals("boolean>1", booleanConvertData)
+        assertEquals("crux:integer>10", integerConvertData)
+        assertEquals("crux:double>10.0", doubleConvertData)
+        assertEquals("crux:string>test", stringConvertData)
+        assertEquals("crux:boolean>1", booleanConvertData)
     }
 }

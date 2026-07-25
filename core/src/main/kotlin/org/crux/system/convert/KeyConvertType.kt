@@ -20,9 +20,9 @@ class KeyConvertType : ConvertType<Key> {
     override fun dataTypeConvertLogic(source: String): Key {
         val data = removeTag(getKeyTag().identifier, source)
 
-        val parts = data.split("_", limit = 2)
+        val parts = data.split(":", limit = 2)
         require(parts.size == 2) {
-            "Invalid Key data format. Expected: <namespace>_<path> but got: $data"
+            "Invalid Key data format. Expected: <namespace>:<path> but got: $data"
         }
 
         return Key(namespace = parts[0], path = parts[1])
