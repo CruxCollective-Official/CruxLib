@@ -25,6 +25,7 @@ object ConvertTypes {
         DoubleConvertType(),
         StringConvertType(),
         BooleanConvertType(),
-        StatusContainerConvertType()
+        StatusContainerConvertType(),
+        KeyConvertType()
     )
 }

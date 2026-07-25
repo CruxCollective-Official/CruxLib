@@ -1,6 +1,5 @@
 package org.crux.system.convert
 
-import org.crux.core.KeyManager
 import org.crux.core.createCruxKey
 import org.crux.game.status.StatusContainer
 import org.crux.system.key.Key
@@ -23,11 +22,6 @@ class StatusContainerConvertType : ConvertType<StatusContainer> {
 
     //未実装!!!
     override fun dataTypeConvertLogic(source: String): StatusContainer {
-        val container = StatusContainer()
-        var dataString = removeTag(getKeyTag().identifier, source)
-
-        return container
+        TODO("だれかなんとかして")
     }
-
-    //求める値 status_container>[dummy_status,test,add:10]
 }
