@@ -4,13 +4,10 @@ import org.crux.core.Crux
 import org.crux.core.CruxRegistryTypeKeys
 import org.crux.core.createCruxKey
 import org.crux.game.status.CalculateType
-import org.crux.game.status.Status
 import org.crux.game.status.StatusContainer
 import org.crux.game.status.StatusModifierKey
 import org.crux.game.status.StatusStepType
 import org.crux.system.key.Key
-import org.crux.system.registry.Registry
-import org.crux.system.registry.RegistryTypeKey
 
 class StatusContainerConvertType(
     private val keyConvertType: KeyConvertType,
@@ -37,7 +34,6 @@ class StatusContainerConvertType(
         return dataString + builder.toString()
     }
 
-    //未実装!!!
     override fun dataTypeConvertLogic(source: String): StatusContainer {
         val data = removeTag(getKeyTag().identifier, source)
         val entries = data.removePrefix("[").removeSuffix("]").split("][")
