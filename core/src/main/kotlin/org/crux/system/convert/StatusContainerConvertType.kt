@@ -45,11 +45,6 @@ class StatusContainerConvertType(
         val statusRegistry = Crux.registry(CruxRegistryTypeKeys.STATUS_KEY)
         for (entry in entries) {
             val (status, stepType, calcType, value) = entry.split(",")
-            println(keyConvertType.dataTypeConvertLogic(status))
-            println(statusRegistry.javaClass.getDeclaredField("registryMap").let {
-                it.isAccessible = true
-                it.get(statusRegistry) as MutableMap<Key, Status>
-            })
             val key = StatusModifierKey(
                 statusRegistry.get(keyConvertType.dataTypeConvertLogic(status)),
                 StatusStepType(keyConvertType.dataTypeConvertLogic(stepType)),
