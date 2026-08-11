@@ -1,0 +1,109 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "org.crux",
+    "module": "crux-system",
+    "version": "0.8.1",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "9.3.0"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.jvm.version": 21,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.4.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "crux-system-0.8.1.jar",
+          "url": "crux-system-0.8.1.jar",
+          "size": 19219,
+          "sha512": "599d1dae1e2eca38636329db6a0c4cadc0f4c49b893f624bf3e614659a2f35fb7b89e23a7bf83b679e8bb4146222c97513cd15898df3570ef8f9c93210fa5028",
+          "sha256": "6817c7f93da30814422c241ccafbcfba12117c8d89cc11f87a96b0153ddf3fa8",
+          "sha1": "20a4912a40d175d7381f3a13a3e773f8c031ec86",
+          "md5": "3ca241042ec107f56a86dd8e70620ce5"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.jvm.version": 21,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.crux",
+          "module": "crux-annotations",
+          "version": {
+            "requires": "0.8.1"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.4.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "crux-system-0.8.1.jar",
+          "url": "crux-system-0.8.1.jar",
+          "size": 19219,
+          "sha512": "599d1dae1e2eca38636329db6a0c4cadc0f4c49b893f624bf3e614659a2f35fb7b89e23a7bf83b679e8bb4146222c97513cd15898df3570ef8f9c93210fa5028",
+          "sha256": "6817c7f93da30814422c241ccafbcfba12117c8d89cc11f87a96b0153ddf3fa8",
+          "sha1": "20a4912a40d175d7381f3a13a3e773f8c031ec86",
+          "md5": "3ca241042ec107f56a86dd8e70620ce5"
+        }
+      ]
+    },
+    {
+      "name": "sourcesElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "crux-system-0.8.1-sources.jar",
+          "url": "crux-system-0.8.1-sources.jar",
+          "size": 4120,
+          "sha512": "d874df1910db8ec7118f418f4588840184da4030cb35cf72a3016d4a245858ce89ded0b27624bc5303e792b2ee7fb6af6448e54553730d3d3716d64b4b53826d",
+          "sha256": "bcf19776a3fe1aba0d9bb1b48532caa0535c14e878658df23be485c57b383169",
+          "sha1": "1f900f81467e3a53bb469ac1fbbc05ce4af99483",
+          "md5": "541d05bdda1434ac7e02b58d761bc410"
+        }
+      ]
+    }
+  ]
+}

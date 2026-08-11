@@ -5,7 +5,7 @@ import org.crux.ID
 class RegistryBuilder internal constructor() {
     private val registryList = ArrayList<RegistryBranch<*, *>>()
 
-    fun build(): RegistryContainer {
+    internal fun build(): RegistryContainer {
         val map = mutableMapOf<RegistryKey<*, *>, Registry<*, *>>()
 
         for (branch in registryList) {
