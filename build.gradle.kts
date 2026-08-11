@@ -3,7 +3,7 @@ plugins {
 }
 
 group = "org.crux"
-version = "0.7.0"
+version = project.property("sharedVersion") as String
 
 subprojects {
     repositories {

@@ -1,0 +1,37 @@
+package register
+
+import dummy.DummyInstance
+import org.crux.register.RegistryBranch
+import org.crux.register.RegistryBuilder
+import org.crux.register.RegistryKey
+import kotlin.test.BeforeTest
+import kotlin.test.Test
+import kotlin.test.assertEquals
+
+class RegistryContainerTest {
+
+    private lateinit var branch: RegistryBranch<Int, DummyInstance>
+
+    private val registryKey = RegistryKey<Int, DummyInstance>("test_key")
+
+    private val dummyInstance = DummyInstance()
+
+    @BeforeTest
+    fun setup() {
+        branch = RegistryBranch(registryKey)
+    }
+
+    @Test
+    fun `can be retrieved from the registry object`() {
+        val registryObject = branch.create {
+            dummyInstance
+        }
+
+        val builder = RegistryBuilder()
+        builder.put(branch)
+
+        val container = builder.build()
+
+        assertEquals(container[registryKey].get(1), dummyInstance)
+    }
+}

@@ -54,15 +54,15 @@ public class CruxProcessor extends AbstractProcessor {
                 writer.write("""
         package org.crux.generated;
         
-        import org.crux.core.CruxState;
-        import org.crux.system.registry.RegistryBuilder;
+        import org.crux.CruxStatus;
+        import org.crux.register.RegistryBuilder;
 
         public final class GeneratedRegistries {
         
             private GeneratedRegistries() {}
 
             public static void register() {
-                RegistryBuilder builder = CruxState.INSTANCE.getRegistryBuilder();
+                RegistryBuilder builder = CruxStatus.INSTANCE.getRegistryBuilder();
         """ + code +
             """
             }
