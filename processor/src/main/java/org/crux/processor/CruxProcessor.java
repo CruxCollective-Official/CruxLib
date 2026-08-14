@@ -47,22 +47,20 @@ public class CruxProcessor extends AbstractProcessor {
 
                 StringBuilder builder = new StringBuilder();
                 for (TypeElement element : elements) {
-                    builder.append("new ").append(element.getQualifiedName()).append("().register(builder);\n");
+                    builder.append("        new ").append(element.getQualifiedName()).append("().register(builder);\n");
                 }
                 String code = builder.toString();
 
                 writer.write("""
         package org.crux.generated;
-        
-        import org.crux.CruxStatus;
+
         import org.crux.register.RegistryBuilder;
 
         public final class GeneratedRegistries {
         
             private GeneratedRegistries() {}
 
-            public static void register() {
-                RegistryBuilder builder = CruxStatus.INSTANCE.getRegistryBuilder();
+            public static void register(RegistryBuilder builder) {
         """ + code +
             """
             }

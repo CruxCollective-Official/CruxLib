@@ -6,28 +6,16 @@ import org.crux.generated.GeneratedRegistries
 import org.crux.key.KeyFactory
 import org.crux.register.RegistryContainer
 
-class Crux {
-    companion object {
-        init {
-            CruxStatus.initialize()
-        }
+object Crux {
 
-        val REGISTRY_CONTAINER: RegistryContainer = CruxStatus.registryBuilder.build()
-        val CRUX_KEY_MANAGER = KeyFactory("crux")
-    }
-}
+    val REGISTRY_CONTAINER: RegistryContainer
+    val CRUX_KEY_MANAGER = KeyFactory("crux")
 
-internal object CruxStatus {
+    init {
+        val builder = RegistryBuilder()
 
-    val registryBuilder = RegistryBuilder()
+        GeneratedRegistries.register(builder)
 
-    private var initialized = false
-
-    fun initialize() {
-        if (initialized) return
-
-        initialized = true
-
-        GeneratedRegistries.register()
+        REGISTRY_CONTAINER = builder.build()
     }
 }

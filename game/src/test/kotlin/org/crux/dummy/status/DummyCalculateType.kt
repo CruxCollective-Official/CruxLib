@@ -1,6 +1,6 @@
 package org.crux.dummy.status
 
-import org.crux.Crux.Companion.CRUX_KEY_MANAGER
+import org.crux.Crux.CRUX_KEY_MANAGER
 import org.crux.status.CalculateType
 
 enum class DummyCalculateType(
