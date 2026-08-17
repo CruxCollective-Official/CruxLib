@@ -1,4 +1,4 @@
-package register
+package org.crux.register
 
 import org.crux.register.RegistryObject
 import org.junit.jupiter.api.Assertions.assertEquals

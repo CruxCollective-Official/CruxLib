@@ -1,4 +1,4 @@
-package dummy
+package org.crux.dummy
 
 import org.crux.ID
 

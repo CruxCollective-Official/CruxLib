@@ -1,4 +1,4 @@
-package register
+package org.crux.register
 
 import org.crux.register.Registry
 import kotlin.test.Test

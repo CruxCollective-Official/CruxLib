@@ -1,4 +1,4 @@
-package key
+package org.crux.key
 
 import org.crux.key.Key
 import org.crux.key.KeyFactory

@@ -1,6 +1,6 @@
-package register
+package org.crux.register
 
-import dummy.DummyInstance
+import org.crux.dummy.DummyInstance
 import org.crux.register.RegistryBranch
 import org.crux.register.RegistryBuilder
 import org.crux.register.RegistryKey
