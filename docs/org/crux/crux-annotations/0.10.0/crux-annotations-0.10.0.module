@@ -1,0 +1,102 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "org.crux",
+    "module": "crux-annotations",
+    "version": "0.10.0",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "9.3.0"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.jvm.version": 21,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.4.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "crux-annotations-0.10.0.jar",
+          "url": "crux-annotations-0.10.0.jar",
+          "size": 1373,
+          "sha512": "7aa73f050a5dc606c6cf4a885de2246cfbf51c8ae7984f3fea2c91f33108404d93adda450143001e3a0f9be965c018a427fbe9e01d7ca9c480e5ad45d565baf8",
+          "sha256": "9953d99682dbf62ab9c57251c327f8af8e2f091fbb76d58745d1e34200b6877d",
+          "sha1": "8b8fd3dbc34452334edd85ea316bd107e1b7f26e",
+          "md5": "c6f5d3067474edfccbb2683a11783cd7"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.jvm.version": 21,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.4.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "crux-annotations-0.10.0.jar",
+          "url": "crux-annotations-0.10.0.jar",
+          "size": 1373,
+          "sha512": "7aa73f050a5dc606c6cf4a885de2246cfbf51c8ae7984f3fea2c91f33108404d93adda450143001e3a0f9be965c018a427fbe9e01d7ca9c480e5ad45d565baf8",
+          "sha256": "9953d99682dbf62ab9c57251c327f8af8e2f091fbb76d58745d1e34200b6877d",
+          "sha1": "8b8fd3dbc34452334edd85ea316bd107e1b7f26e",
+          "md5": "c6f5d3067474edfccbb2683a11783cd7"
+        }
+      ]
+    },
+    {
+      "name": "sourcesElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "crux-annotations-0.10.0-sources.jar",
+          "url": "crux-annotations-0.10.0-sources.jar",
+          "size": 796,
+          "sha512": "f96f6dc6ff30882f15758cdc943857c9f3629ea5dcd94b01cdbbcf12c50345677f3f4cd7a35e2c14f732f29055c5c1b0785aab3256eb2d9c697019d382196629",
+          "sha256": "aa767bf7c28db02fcccf6573a9616efe6ad85277744ca49ce41e7cd39dd82ed4",
+          "sha1": "3eecc2f9adbd7e2f2a6e6111366f7492f6fe0424",
+          "md5": "0a38cf59ed730222bf545e6384426964"
+        }
+      ]
+    }
+  ]
+}
