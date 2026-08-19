@@ -10,4 +10,8 @@ class ItemStack<AMOUNT_TYPE : Number> (
     fun getMeta(): MetaData {
         return meta ?: MetaData()
     }
+
+    fun equalsItemStack(other: ItemStack<AMOUNT_TYPE>): Boolean {
+        return this.item == other.item && this.amount == other.amount && this.meta == other.getMeta()
+    }
 }
