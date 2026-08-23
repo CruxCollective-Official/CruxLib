@@ -12,6 +12,6 @@ class ItemStack<AMOUNT_TYPE : Number> (
     }
 
     fun equalsItemStack(other: ItemStack<AMOUNT_TYPE>): Boolean {
-        return this.item == other.item && this.amount == other.amount && this.meta == other.getMeta()
+        return this.item == other.item && this.meta == other.getMeta()
     }
 }
