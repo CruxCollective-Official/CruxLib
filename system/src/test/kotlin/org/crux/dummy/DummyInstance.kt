@@ -1,8 +1,8 @@
 package org.crux.dummy
 
-import org.crux.ID
+import org.crux.holder.IdHolder
 
-class DummyInstance : ID<Int> {
+class DummyInstance : IdHolder<Int> {
     override fun getID(): Int {
         return 1
     }

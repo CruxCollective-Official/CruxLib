@@ -9,7 +9,8 @@ import org.crux.register.RegistryContainer
 object Crux {
 
     val REGISTRY_CONTAINER: RegistryContainer
-    val CRUX_KEY_MANAGER = KeyFactory("crux")
+
+    internal val CRUX_KEY_MANAGER = KeyFactory("crux")
 
     init {
         val builder = RegistryBuilder()

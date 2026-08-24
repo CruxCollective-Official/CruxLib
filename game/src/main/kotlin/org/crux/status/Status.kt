@@ -1,7 +1,7 @@
 package org.crux.status
 
-import org.crux.ID
+import org.crux.holder.IdHolder
 import org.crux.key.Key
 
-interface Status : ID<Key> {
+interface Status : IdHolder<Key> {
 }

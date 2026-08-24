@@ -1,8 +1,8 @@
 package org.crux.register
 
-import org.crux.ID
+import org.crux.holder.IdHolder
 
-class RegistryBranch<KEY, VALUE : ID<KEY>> (
+class RegistryBranch<KEY, VALUE : IdHolder<KEY>> (
     override val registryKey: RegistryKey<KEY, VALUE>
 ) : ErasedRegistryBranch {
     private val branchList = ArrayList<RegistryObject<VALUE>>()

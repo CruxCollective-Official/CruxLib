@@ -1,6 +1,6 @@
 package org.crux.register
 
-import org.crux.ID
+import org.crux.holder.IdHolder
 
 class RegistryBuilder internal constructor() {
     private val registryList = ArrayList<RegistryBranch<*, *>>()
@@ -27,7 +27,7 @@ class RegistryBuilder internal constructor() {
 class RegistryContainer(
     private val registryMap: MutableMap<RegistryKey<*, *>, Registry<*, *>>
 ) {
-    operator fun <KEY, VALUE : ID<KEY>> get(key: RegistryKey<KEY, VALUE>): ImmutableRegistry<KEY, VALUE> {
+    operator fun <KEY, VALUE : IdHolder<KEY>> get(key: RegistryKey<KEY, VALUE>): ImmutableRegistry<KEY, VALUE> {
         return registryMap[key] as Registry<KEY, VALUE>
     }
 }

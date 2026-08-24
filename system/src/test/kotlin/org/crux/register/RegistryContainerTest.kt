@@ -1,5 +1,6 @@
 package org.crux.register
 
+import org.crux.Crux.CRUX_KEY_MANAGER
 import org.crux.dummy.DummyInstance
 import org.crux.register.RegistryBranch
 import org.crux.register.RegistryBuilder
@@ -12,7 +13,7 @@ class RegistryContainerTest {
 
     private lateinit var branch: RegistryBranch<Int, DummyInstance>
 
-    private val registryKey = RegistryKey<Int, DummyInstance>("test_key")
+    private val registryKey = RegistryKey<Int, DummyInstance>(CRUX_KEY_MANAGER.create("test_key"))
 
     private val dummyInstance = DummyInstance()
 
