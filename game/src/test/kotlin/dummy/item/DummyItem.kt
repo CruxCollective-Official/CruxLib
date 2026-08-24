@@ -1,4 +1,4 @@
-package org.crux.dummy.item
+package dummy.item
 
 import org.crux.item.Item
 

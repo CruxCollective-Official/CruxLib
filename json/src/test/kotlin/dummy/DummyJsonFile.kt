@@ -1,4 +1,4 @@
-package org.crux.dummy
+package dummy
 
 object DummyJsonFile {
     const val dummy1: String = """

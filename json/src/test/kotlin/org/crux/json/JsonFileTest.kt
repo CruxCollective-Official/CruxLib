@@ -1,6 +1,6 @@
 package org.crux.json
 
-import org.crux.dummy.DummyJsonFile
+import dummy.DummyJsonFile
 import org.junit.jupiter.api.Test
 import kotlin.test.assertEquals
 

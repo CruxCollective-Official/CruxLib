@@ -1,6 +1,6 @@
 package org.crux.item
 
-import org.crux.dummy.item.DummyItem
+import dummy.item.DummyItem
 import org.junit.jupiter.api.Test
 
 class ItemStackTest {

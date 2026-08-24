@@ -1,4 +1,4 @@
-package org.crux.dummy.status
+package dummy.status
 
 import org.crux.Crux.CRUX_KEY_MANAGER
 import org.crux.key.Key

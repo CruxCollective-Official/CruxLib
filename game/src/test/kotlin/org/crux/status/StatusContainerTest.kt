@@ -1,8 +1,8 @@
 package org.crux.status
 
-import org.crux.dummy.status.DummyCalculateType
-import org.crux.dummy.status.DummyStatus
-import org.crux.dummy.status.DummyStatusStepType
+import dummy.status.DummyCalculateType
+import dummy.status.DummyStatus
+import dummy.status.DummyStatusStepType
 import kotlin.test.Test
 import kotlin.test.assertEquals
 

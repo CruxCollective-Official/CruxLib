@@ -1,8 +1,7 @@
 package org.crux.register
 
+import org.crux.Crux.CRUX_KEY_MANAGER
 import org.crux.dummy.DummyInstance
-import org.crux.register.RegistryBranch
-import org.crux.register.RegistryKey
 import org.junit.jupiter.api.Assertions.assertFalse
 import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test
@@ -15,7 +14,7 @@ class RegistryBranchTest {
 
     private lateinit var branch: RegistryBranch<Int, DummyInstance>
 
-    private val registryKey = RegistryKey<Int, DummyInstance>("test_key")
+    private val registryKey = RegistryKey<Int, DummyInstance>(CRUX_KEY_MANAGER.create("test_key"))
 
     @BeforeTest
     fun setup() {
