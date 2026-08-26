@@ -1,7 +1,7 @@
 package org.crux.register
 
 import org.crux.Crux.CRUX_KEY_MANAGER
-import org.crux.dummy.DummyInstance
+import dummy.DummyInstance
 import org.junit.jupiter.api.Assertions.assertFalse
 import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test

@@ -2,7 +2,7 @@ package org.crux.slot
 
 import org.crux.holder.AmountHolder
 
-interface Slot<out TYPE> {
+interface Slot<TYPE> {
     val content: TYPE
 }
 

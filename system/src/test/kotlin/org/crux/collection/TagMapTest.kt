@@ -1,6 +1,6 @@
 package org.crux.collection
 
-import org.crux.dummy.DummyInstance
+import dummy.DummyInstance
 import kotlin.test.Test
 import kotlin.test.assertEquals
 

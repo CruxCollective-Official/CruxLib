@@ -1,4 +1,4 @@
-package org.crux.dummy
+package dummy
 
 import org.crux.holder.IdHolder
 

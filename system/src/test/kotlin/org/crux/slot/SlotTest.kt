@@ -1,7 +1,7 @@
 package org.crux.slot
 
-import org.crux.dummy.DummySlot
-import org.crux.dummy.DummyTank
+import dummy.DummySlot
+import dummy.DummyTank
 import org.junit.jupiter.api.Test
 import kotlin.test.assertEquals
 

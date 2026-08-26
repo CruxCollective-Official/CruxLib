@@ -1,9 +1,7 @@
 package org.crux.item
 
-class ItemStack<AMOUNT_TYPE : Number> (
-    var amount: AMOUNT_TYPE,
+class ItemData<AMOUNT_TYPE : Number> (
     val item: Item<AMOUNT_TYPE>,
-    val maxAmount: AMOUNT_TYPE = item.maxAmount()
 ) {
     private var meta: MetaData? = null
 
@@ -11,7 +9,7 @@ class ItemStack<AMOUNT_TYPE : Number> (
         return meta ?: MetaData()
     }
 
-    fun equalsItemStack(other: ItemStack<AMOUNT_TYPE>): Boolean {
+    fun equalsItemData(other: ItemData<AMOUNT_TYPE>): Boolean {
         return this.item == other.item && this.meta == other.getMeta()
     }
 }

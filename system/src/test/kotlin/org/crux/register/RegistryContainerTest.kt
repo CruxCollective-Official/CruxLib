@@ -1,10 +1,7 @@
 package org.crux.register
 
 import org.crux.Crux.CRUX_KEY_MANAGER
-import org.crux.dummy.DummyInstance
-import org.crux.register.RegistryBranch
-import org.crux.register.RegistryBuilder
-import org.crux.register.RegistryKey
+import dummy.DummyInstance
 import kotlin.test.BeforeTest
 import kotlin.test.Test
 import kotlin.test.assertEquals
