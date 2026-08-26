@@ -3,6 +3,8 @@ plugins {
     kotlin("kapt")
     `java-library`
     `maven-publish`
+
+    id("me.champeau.jmh") version "0.7.3"
 }
 
 dependencies {
@@ -10,6 +12,9 @@ dependencies {
     kapt(project(":processor"))
 
     testImplementation(kotlin("test"))
+
+    jmh("org.openjdk.jmh:jmh-core:1.37")
+    jmhAnnotationProcessor("org.openjdk.jmh:jmh-generator-annprocess:1.37")
 }
 
 java {
