@@ -25,7 +25,7 @@ open class TagMapBenchmark {
         map.putTag(1)
 
         val elementCount = 1_000_000
-        val tagCount = 10_000
+        val tagCount = 5
 
         values = ArrayList(elementCount)
         referenceIndex = BitSet()
