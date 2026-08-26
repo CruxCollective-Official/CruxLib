@@ -1,7 +1,7 @@
 package org.crux.item
 
-data class ItemData<AMOUNT_TYPE : Number> (
-    val item: Item<AMOUNT_TYPE>,
+data class ItemData<TYPE : Item> (
+    val item: TYPE,
     private var meta: MetaData? = null
 ) {
 
@@ -13,11 +13,11 @@ data class ItemData<AMOUNT_TYPE : Number> (
         this.meta = meta
     }
 
-    fun equalsItemData(other: ItemData<AMOUNT_TYPE>): Boolean {
+    fun equalsItemData(other: ItemData<TYPE>): Boolean {
         return this.item == other.item && this.meta == other.getMeta()
     }
 
-    fun copy(): ItemData<AMOUNT_TYPE> {
+    fun copy(): ItemData<TYPE> {
         return ItemData(item, meta?.copy() ?: MetaData())
     }
 }

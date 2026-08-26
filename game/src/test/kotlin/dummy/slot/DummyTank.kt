@@ -1,4 +1,4 @@
-package dummy
+package dummy.slot
 
 import org.crux.holder.AmountHolder
 
