@@ -24,8 +24,8 @@ open class TagMapBenchmark {
 
         map.putTag(1)
 
-        val elementCount = 10_000_000
-        val tagCount = 1_000
+        val elementCount = 1_000_000
+        val tagCount = 10_000
 
         values = ArrayList(elementCount)
         referenceIndex = BitSet()
@@ -44,7 +44,6 @@ open class TagMapBenchmark {
             referenceIndex.set(index)
         }
 
-        map.addFilter(1)
     }
 
     /**
@@ -52,6 +51,7 @@ open class TagMapBenchmark {
      */
     @Benchmark
     fun tagMapGetFilter(): List<String> {
+        map.addFilter(1)
         return map.getFilter()
     }
 

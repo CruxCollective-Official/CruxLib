@@ -5,7 +5,7 @@ import java.util.PriorityQueue
 
 class TagMap<KEY, VALUE, TAG> {
     private var valueMap = HashMap<KEY, Int>()
-    private var valueList = ArrayList<Entry<KEY, VALUE>>()
+    private var valueList = ArrayList<Entry<KEY, VALUE>?>()
     private var tagMap = HashMap<TAG, TagContent>()
     private var blankSlot = PriorityQueue<Int>()
 
@@ -13,7 +13,7 @@ class TagMap<KEY, VALUE, TAG> {
 
     @Suppress("UNCHECKED_CAST")
     operator fun get(key: KEY): VALUE {
-        return valueList[valueMap[key]!!].value
+        return valueList[valueMap[key]!!]!!.value
     }
 
     operator fun set(key: KEY, value: VALUE) {
@@ -31,7 +31,7 @@ class TagMap<KEY, VALUE, TAG> {
         val result = ArrayList<VALUE>()
 
         for (value in valueList) {
-            result.add(value.value)
+            if (value?.value != null) result.add(value.value)
         }
         return result
     }
@@ -63,11 +63,37 @@ class TagMap<KEY, VALUE, TAG> {
         var index = filterFlag.nextSetBit(0)
 
         while (index >= 0) {
-            result.add(valueList[index].value)
+            result.add(valueList[index]!!.value)
             index = filterFlag.nextSetBit(index + 1)
         }
 
         return result
+    }
+
+    fun removeValue(key: KEY) {
+        val index = valueMap[key]!!
+
+        valueList[index] = null
+        valueMap.remove(key)
+
+        for (tag in tagMap.values) {
+            tag.referenceIndex.clear(index)
+        }
+
+        blankSlot.add(index)
+        filterFlag.clear()
+    }
+
+    fun filterClear() {
+        filterFlag.clear()
+    }
+
+    fun getFilterMapping(): BitSet {
+        return filterFlag.clone() as BitSet
+    }
+
+    fun setFilterMapping(filter: BitSet) {
+        filterFlag = filter
     }
 
     private class Entry<KEY, VALUE>(val key: KEY, val value: VALUE)
@@ -76,21 +102,4 @@ class TagMap<KEY, VALUE, TAG> {
         val estimateIndex: ArrayList<Int> = ArrayList(),
         val referenceIndex: BitSet = BitSet()
     )
-}
-
-class FullScanMap(
-    private val values: ArrayList<String>,
-    private val referenceIndex: BitSet
-) {
-    fun getFilter(): List<String> {
-        val result = ArrayList<String>()
-
-        for (i in values.indices) {
-            if (referenceIndex.get(i)) {
-                result.add(values[i])
-            }
-        }
-
-        return result
-    }
 }
