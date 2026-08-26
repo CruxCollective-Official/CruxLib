@@ -2,6 +2,7 @@ package org.crux.collection
 
 import java.util.BitSet
 import java.util.PriorityQueue
+import javax.swing.text.html.HTML
 
 class TagMap<KEY, VALUE, TAG> {
     private var valueMap = HashMap<KEY, Int>()
@@ -45,6 +46,10 @@ class TagMap<KEY, VALUE, TAG> {
 
         content.estimateIndex.add(valueMap[key]!!)
         content.referenceIndex.set(valueMap[key]!!)
+    }
+
+    fun removeTag(tag: TAG) {
+        tagMap.remove(tag)
     }
 
     fun addFilter(tag: TAG) {
@@ -97,9 +102,9 @@ class TagMap<KEY, VALUE, TAG> {
     }
 
     private class Entry<KEY, VALUE>(val key: KEY, val value: VALUE)
-
-    private class TagContent(
-        val estimateIndex: ArrayList<Int> = ArrayList(),
-        val referenceIndex: BitSet = BitSet()
-    )
 }
+
+class TagContent(
+    val estimateIndex: ArrayList<Int> = ArrayList(),
+    val referenceIndex: BitSet = BitSet()
+)
