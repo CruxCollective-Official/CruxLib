@@ -1,8 +1,10 @@
 package org.crux.item
 
-class MetaData {
-    private val metaDataMap = mutableMapOf<MetaDataKey<*>, Any>()
+import kotlin.collections.mutableMapOf
 
+data class MetaData (
+    private val metaDataMap: MutableMap<MetaDataKey<*>, Any> = mutableMapOf()
+) {
     @Suppress("UNCHECKED_CAST")
     operator fun <DATA_TYPE> get(key: MetaDataKey<DATA_TYPE>): DATA_TYPE {
         return metaDataMap[key] as DATA_TYPE
@@ -14,6 +16,12 @@ class MetaData {
 
     fun equalsMetaData(other: MetaData): Boolean {
         return metaDataMap == other.metaDataMap
+    }
+
+    fun copy(): MetaData {
+        val copyMap: MutableMap<MetaDataKey<*>, Any> = mutableMapOf()
+        copyMap.putAll(metaDataMap)
+        return MetaData(copyMap)
     }
 }
 
