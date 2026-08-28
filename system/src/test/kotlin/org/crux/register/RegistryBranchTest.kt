@@ -2,6 +2,7 @@ package org.crux.register
 
 import org.crux.Crux.CRUX_KEY_MANAGER
 import dummy.DummyInstance
+import org.crux.annotations.InternalCruxApi
 import org.junit.jupiter.api.Assertions.assertFalse
 import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test
@@ -10,6 +11,7 @@ import kotlin.test.assertEquals
 import kotlin.test.assertNotNull
 import kotlin.test.assertSame
 
+@InternalCruxApi
 class RegistryBranchTest {
 
     private lateinit var branch: RegistryBranch<Int, DummyInstance>

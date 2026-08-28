@@ -25,7 +25,7 @@ class RegistryBranch<KEY, VALUE : IdHolder<KEY>> (
     ) {
         for (registryObject in branchList) {
             val value = registryObject.get()
-            registry.add(value.getID(), value)
+            registry.add(value.id(), value)
         }
     }
 }

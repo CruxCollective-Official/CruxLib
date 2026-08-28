@@ -2,10 +2,12 @@ package org.crux.register
 
 import org.crux.Crux.CRUX_KEY_MANAGER
 import dummy.DummyInstance
+import org.crux.annotations.InternalCruxApi
 import kotlin.test.BeforeTest
 import kotlin.test.Test
 import kotlin.test.assertEquals
 
+@InternalCruxApi
 class RegistryContainerTest {
 
     private lateinit var branch: RegistryBranch<Int, DummyInstance>
