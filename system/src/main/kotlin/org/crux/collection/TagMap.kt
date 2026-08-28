@@ -12,12 +12,50 @@ class TagMap<KEY, VALUE, TAG> {
 
     private var filterFlag = BitSet()
 
+    /**
+     * 指定されたキーの存在有無を判定します。要素操作前の安全確認に使用します。
+     */
+    fun containsKey(key: KEY): Boolean = valueMap.containsKey(key)
+
+    /**
+     * 指定されたタグの存在有無を判定します。タグ操作前の安全確認に使用します。
+     */
+    fun containsTag(tag: TAG): Boolean = tagMap.containsKey(tag)
+
     @Suppress("UNCHECKED_CAST")
     operator fun get(key: KEY): VALUE {
-        return valueList[valueMap[key]!!]!!.value
+        val index = valueMap[key] ?: throw NoSuchElementException("Key '$key' is not registered in this TagMap.")
+        return valueList[index]!!.value
     }
 
+    /**
+     * 指定された既存のキーに対応する要素を、新しい値で上書き（置換）します。
+     *
+     * ※このメソッドを呼び出す前に、対象のキーがすでに登録されている必要があります。
+     *
+     * @param key 上書き対象の登録済みキー
+     * @param value 新しく設定する要素データ
+     * @throws NoSuchElementException 指定されたキーが登録されていない場合
+     */
     operator fun set(key: KEY, value: VALUE) {
+        val index = valueMap[key] ?: throw NoSuchElementException("Cannot set value: Key '$key' is not registered in this TagMap. Use add() to insert a new element.")
+        valueList[index] = Entry(key, value)
+    }
+
+    /**
+     * 新しい要素をコンテナに登録します。
+     *
+     * 内部で過去に削除された空きスロット（インデックス）がある場合は、
+     * メモリ効率とデータ走査速度を維持するために優先的に再利用されます。
+     *
+     * @param key 新規登録する要素のキー
+     * @param value 登録する要素データ
+     */
+    fun add(key: KEY, value: VALUE) {
+        if (valueMap.containsKey(key)) {
+            error("Cannot add value: Key '$key' is already registered. Use set() if you want to overwrite the existing value.")
+        }
+
         if (blankSlot.isEmpty()) {
             valueList.add(Entry(key, value))
             valueMap[key] = valueList.size - 1
@@ -27,6 +65,7 @@ class TagMap<KEY, VALUE, TAG> {
             valueMap[key] = index
         }
     }
+
 
     fun toList(): ArrayList<VALUE> {
         val result = ArrayList<VALUE>()
