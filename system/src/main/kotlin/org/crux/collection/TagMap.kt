@@ -2,8 +2,10 @@ package org.crux.collection
 
 import java.util.BitSet
 import java.util.PriorityQueue
-import javax.swing.text.html.HTML
 
+/**
+ *
+ */
 class TagMap<KEY, VALUE, TAG> {
     private var valueMap = HashMap<KEY, Int>()
     private var valueList = ArrayList<Entry<KEY, VALUE>?>()
