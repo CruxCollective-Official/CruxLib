@@ -44,7 +44,6 @@ data class MetaData (
      * @return 自身の中身をコピーした新規[ValueMetaData]インスタンス
      */
     fun copy(): ValueMetaData {
-        // toMutableMap() または toMap() を使うことで、元のマップの参照を切った独立したコピーを作れます
         return ValueMetaData(metaDataMap.toMap())
     }
 }

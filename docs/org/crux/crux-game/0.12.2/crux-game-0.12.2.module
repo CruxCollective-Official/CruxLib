@@ -38,11 +38,11 @@
         {
           "name": "crux-game-0.12.2.jar",
           "url": "crux-game-0.12.2.jar",
-          "size": 12445,
-          "sha512": "dfb60d4918254e31a099ea4c3be6bfc6c0e81f9c0de33641abbccf5c78ae5696aea0602a2d8a606257a49cb2bc5acbc27fdbeea42259556c91e860adddbca3fa",
-          "sha256": "68608ae6a764894e8b51a50706c70db759cf5039329f31dae8a195745b509249",
-          "sha1": "756faff12a6567f5a5229d3656b7d9953d683d4a",
-          "md5": "a4d1bfede52447fc0695701ddbe4ce0e"
+          "size": 17202,
+          "sha512": "fef2a5a1086270df6901532f6f5bdfec1fbf3c9830f78d76fa51a56ad2a3f638ebccaa64a219de8b21879cb670fed79710daadbd94dc338202c6e901c5428436",
+          "sha256": "6ee6210a7c5b184e47ca2d8f64f256cb4290c31074a58ced539c603b1128fb5b",
+          "sha1": "0bb1c25f26d93624b217312608fcbf73e583250d",
+          "md5": "203d85defd20ad9ea707c96b6ec75d8a"
         }
       ]
     },
@@ -84,11 +84,11 @@
         {
           "name": "crux-game-0.12.2.jar",
           "url": "crux-game-0.12.2.jar",
-          "size": 12445,
-          "sha512": "dfb60d4918254e31a099ea4c3be6bfc6c0e81f9c0de33641abbccf5c78ae5696aea0602a2d8a606257a49cb2bc5acbc27fdbeea42259556c91e860adddbca3fa",
-          "sha256": "68608ae6a764894e8b51a50706c70db759cf5039329f31dae8a195745b509249",
-          "sha1": "756faff12a6567f5a5229d3656b7d9953d683d4a",
-          "md5": "a4d1bfede52447fc0695701ddbe4ce0e"
+          "size": 17202,
+          "sha512": "fef2a5a1086270df6901532f6f5bdfec1fbf3c9830f78d76fa51a56ad2a3f638ebccaa64a219de8b21879cb670fed79710daadbd94dc338202c6e901c5428436",
+          "sha256": "6ee6210a7c5b184e47ca2d8f64f256cb4290c31074a58ced539c603b1128fb5b",
+          "sha1": "0bb1c25f26d93624b217312608fcbf73e583250d",
+          "md5": "203d85defd20ad9ea707c96b6ec75d8a"
         }
       ]
     },
@@ -104,11 +104,11 @@
         {
           "name": "crux-game-0.12.2-sources.jar",
           "url": "crux-game-0.12.2-sources.jar",
-          "size": 3579,
-          "sha512": "bd5d52ba7455f3c0b2f67341f6e0e6f56ff2e2052db3675eddac9f88a631eaafcb20b8e92f55a0c000ccb80d31cd7de2911342eda0b2e521168c003b512a79f1",
-          "sha256": "aabe453c416433225a5846dfe52833c4f2ea5b02684d4ffc4c693a8289c51f6b",
-          "sha1": "f1eec84c5de0872eb9aefc431403290dddf82efb",
-          "md5": "12bb1e0448e6c551ac63f445de1a944a"
+          "size": 6741,
+          "sha512": "7b02162b99e7aa84ac9694e01c2de0d741a86d41d29e2a5e3f97c1e8712fce0e20178c8b06ddc222fc7686460667c12f32b52cc03e753c0cb6cf7592981e3109",
+          "sha256": "b961478609acfac59e66354a19a5cc9b0026e431d9524f32b62d8e642774a062",
+          "sha1": "5955cfcdf011831f655e50b5f98d9826ce9c6b7e",
+          "md5": "d9c9f3081da3a61f30c880141bcb43e9"
         }
       ]
     }
