@@ -30,17 +30,9 @@ class RegistryBranch<KEY, VALUE : IdHolder<KEY>> (
     }
 }
 
-class RegistryObject<VALUE : Any> (
-    val factory: () -> VALUE
-) {
-    private var instance: VALUE? = null
-
-    fun get(): VALUE {
-        if (instance == null) {
-            instance = factory()
-        }
-        return instance!!
-    }
+class RegistryObject<VALUE : Any>(factory: () -> VALUE) {
+    private val instance by lazy(factory)
+    fun get(): VALUE = instance
 }
 
 internal interface ErasedRegistryBranch {
