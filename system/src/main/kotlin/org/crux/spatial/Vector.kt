@@ -8,5 +8,4 @@ interface Vector2D<TYPE : Number> : Vector1D<TYPE>, TwoDimensional {
 
 interface Vector3D<TYPE : Number> : Vector2D<TYPE>, ThreeDimensional {
     var pitch: TYPE
-    var roll: TYPE
 }
