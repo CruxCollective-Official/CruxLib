@@ -23,6 +23,10 @@ class Factory<PRODUCT, MODULE_TYPE : FactoryModule<PRODUCT>> {
         }
 
         for (module in modules) {
+            module.process(remarks, context)
+        }
+
+        for (module in modules) {
             module.reflect(remarks, context)
         }
 

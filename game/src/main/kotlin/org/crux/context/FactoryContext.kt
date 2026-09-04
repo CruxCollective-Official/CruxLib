@@ -3,7 +3,7 @@ package org.crux.context
 class FactoryContext<PRODUCT>(
     override val product: PRODUCT,
     private val contextMap: MutableMap<FactoryContextKey<*>, Any> = mutableMapOf(),
-) : DataImmutableContext<PRODUCT>, ProductImmutableContext<PRODUCT>, AllImmutableContext<PRODUCT> {
+) : DataImmutableFactoryContext<PRODUCT>, ProductImmutableFactoryContext<PRODUCT>, AllImmutableFactoryContext<PRODUCT> {
 
     @Suppress("UNCHECKED_CAST")
     override operator fun <TYPE> get(key: FactoryContextKey<TYPE>): TYPE {
@@ -15,17 +15,17 @@ class FactoryContext<PRODUCT>(
     }
 }
 
-interface DataImmutableContext<PRODUCT> {
+interface DataImmutableFactoryContext<PRODUCT> {
     val product: PRODUCT
     operator fun <TYPE> get(key: FactoryContextKey<TYPE>): TYPE
 }
 
-interface ProductImmutableContext<PRODUCT> {
+interface ProductImmutableFactoryContext<PRODUCT> {
     operator fun <TYPE> get(key: FactoryContextKey<TYPE>): TYPE
     operator fun <TYPE> set(key: FactoryContextKey<TYPE>, value: TYPE)
 }
 
-interface AllImmutableContext<PRODUCT> {
+interface AllImmutableFactoryContext<PRODUCT> {
     operator fun <TYPE> get(key: FactoryContextKey<TYPE>): TYPE
 }
 
