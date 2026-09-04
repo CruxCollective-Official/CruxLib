@@ -9,19 +9,15 @@ class Factory<PRODUCT, MODULE_TYPE : FactoryModule<PRODUCT>> {
         val context = FactoryContext(newProduct)
 
         for (module in modules) {
-            module.read(context, other)
+            module.read(remarks, context, other)
         }
 
         for (module in modules) {
-            module.update(updateContext, context)
+            module.update(remarks, updateContext, context)
         }
 
         for (module in modules) {
-            module.process(remarks, context)
-        }
-
-        for (module in modules) {
-            module.reflect(context)
+            module.reflect(remarks, context)
         }
 
         return context.product
@@ -35,7 +31,7 @@ class Factory<PRODUCT, MODULE_TYPE : FactoryModule<PRODUCT>> {
         }
 
         for (module in modules) {
-            module.reflect(context)
+            module.reflect(remarks, context)
         }
 
         return context.product
