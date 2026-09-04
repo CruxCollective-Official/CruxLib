@@ -1,11 +1,29 @@
 package org.crux.factory
 
-interface Module
+import org.crux.collection.Context
+import org.crux.context.AllImmutableContext
+import org.crux.context.FactoryContext
+import org.crux.context.DataImmutableContext
+import org.crux.context.ProductImmutableContext
 
-interface ProcesserModule : Module {
-    fun process()
-}
+interface FactoryModule<PRODUCT> {
+    /**
+     * 既存のデータをContextにロードするモジュールです。
+     */
+    fun read(context: FactoryContext<PRODUCT>, other: PRODUCT)
 
-interface ReaderModule : Module {
-    fun reader()
+    /**
+     * Contextにロードした既存データを、加工するモジュールです。
+     */
+    fun update(updateContext: AllImmutableContext<PRODUCT>?, context: ProductImmutableContext<PRODUCT>)
+
+    /**
+     * 定義や定数に依存しない生成時に必要な特殊処理を扱うモジュールです。
+     */
+    fun process(remarks: Context, context: ProductImmutableContext<PRODUCT>)
+
+    /**
+     * Contextのデータを完成予定品に反映するモジュールです。
+     */
+    fun reflect(context: DataImmutableContext<PRODUCT>)
 }
