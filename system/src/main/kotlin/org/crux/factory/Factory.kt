@@ -5,7 +5,13 @@ import org.crux.context.FactoryContext
 
 class Factory<PRODUCT, MODULE_TYPE : FactoryModule<PRODUCT>> {
 
-    fun regeneration(remarks: Context, updateContext: FactoryContext<PRODUCT>?, newProduct: PRODUCT, modules: List<MODULE_TYPE>, other: PRODUCT): PRODUCT {
+    fun regeneration(
+        remarks: Context?,
+        updateContext: FactoryContext<PRODUCT>?,
+        newProduct: PRODUCT,
+        modules: List<MODULE_TYPE>,
+        other: PRODUCT
+    ): PRODUCT {
         val context = FactoryContext(newProduct)
 
         for (module in modules) {
@@ -23,7 +29,11 @@ class Factory<PRODUCT, MODULE_TYPE : FactoryModule<PRODUCT>> {
         return context.product
     }
 
-    fun generation(remarks: Context, generateContext: FactoryContext<PRODUCT>, modules: List<MODULE_TYPE>): PRODUCT {
+    fun generation(
+        remarks: Context?,
+        generateContext: FactoryContext<PRODUCT>,
+        modules: List<MODULE_TYPE>
+    ): PRODUCT {
         for (module in modules) {
             module.process(remarks, generateContext)
         }
