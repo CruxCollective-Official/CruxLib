@@ -44,29 +44,31 @@ public class CruxProcessor extends AbstractProcessor {
                     .getFiler()
                     .createSourceFile("org.crux.generated.GeneratedRegistries");
             try (Writer writer = file.openWriter()) {
-
                 StringBuilder builder = new StringBuilder();
+
                 for (TypeElement element : elements) {
-                    builder.append("        new ").append(element.getQualifiedName()).append("().register(builder);\n");
+                    builder.append("        new ")
+                            .append(element.getQualifiedName())
+                            .append("().register(builder);\n");
                 }
                 String code = builder.toString();
 
                 writer.write("""
-        package org.crux.generated;
-
-        import org.crux.register.RegistryBuilder;
-
-        public final class GeneratedRegistries {
-        
-            private GeneratedRegistries() {}
-
-            public static void register(RegistryBuilder builder) {
-        """ + code +
-            """
-            }
-
-        }
-        """);
+                        package org.crux.generated;
+                        
+                        import org.crux.register.RegistryBuilder;
+                        
+                        public final class GeneratedRegistries {
+                        
+                            private GeneratedRegistries() {}
+                        
+                            public static void register(RegistryBuilder builder) {
+                                %s
+                            }
+                        
+                        }
+                        """.formatted(code).stripIndent()
+                );
             }
         } catch (IOException e) {
             throw new RuntimeException(e);

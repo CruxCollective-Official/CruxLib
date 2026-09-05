@@ -23,7 +23,7 @@ data class MetaData (
      * @return MetaDataに保存された[MetaDataKey]と紐づくデータ
      */
     @Suppress("UNCHECKED_CAST")
-    operator fun <DATA_TYPE> get(key: MetaDataKey<DATA_TYPE>): DATA_TYPE {
+    operator fun <DATA_TYPE> get(key: MetaDataKey<DATA_TYPE>): DATA_TYPE? {
         return metaDataMap[key] as DATA_TYPE
     }
 
@@ -64,7 +64,7 @@ data class ValueMetaData (
      * @return 保存されている[MetaDataKey]と紐づくデータ
      */
     @Suppress("UNCHECKED_CAST")
-    operator fun <DATA_TYPE> get(key: MetaDataKey<DATA_TYPE>): DATA_TYPE {
+    operator fun <DATA_TYPE> get(key: MetaDataKey<DATA_TYPE>): DATA_TYPE? {
         return metaDataMap[key] as DATA_TYPE
     }
 }

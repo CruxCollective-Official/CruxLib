@@ -7,7 +7,5 @@ import org.crux.status.Status
 
 @InternalCruxApi
 class DummyStatus : Status {
-    override fun id(): Key {
-        return CRUX_KEY_MANAGER.create("dummy_status")
-    }
+    override val id = CRUX_KEY_MANAGER.create("dummy_status")
 }

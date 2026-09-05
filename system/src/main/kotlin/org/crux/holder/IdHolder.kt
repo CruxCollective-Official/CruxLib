@@ -11,5 +11,5 @@ interface IdHolder<TYPE> {
      *
      * @return [TYPE]型のIDを返します。
      */
-    fun id(): TYPE
+    val id: TYPE
 }

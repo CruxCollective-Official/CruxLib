@@ -3,17 +3,15 @@ package org.crux.register
 import org.crux.holder.IdHolder
 
 class RegistryBuilder internal constructor() {
-    private val registryList = ArrayList<RegistryBranch<*, *>>()
+    private val registryList = mutableListOf<RegistryBranch<*, *>>()
 
     internal fun build(): RegistryContainer {
         val map = mutableMapOf<RegistryKey<*, *>, Registry<*, *>>()
 
         for (branch in registryList) {
-            if (branch.registryKey !in map) {
-                map[branch.registryKey] = Registry<Any, Any>()
-            }
-
-            branch.addTo(map[branch.registryKey] as Registry<*, *>)
+            branch.addTo(
+                map.computeIfAbsent(branch.registryKey) { Registry<Any, Any>() }
+            )
         }
         return RegistryContainer(map)
     }
@@ -23,11 +21,11 @@ class RegistryBuilder internal constructor() {
     }
 }
 
-@Suppress("UNCHECKED_CAST")
 class RegistryContainer(
     private val registryMap: MutableMap<RegistryKey<*, *>, Registry<*, *>>
 ) {
+    @Suppress("UNCHECKED_CAST")
     operator fun <KEY, VALUE : IdHolder<KEY>> get(key: RegistryKey<KEY, VALUE>): ImmutableRegistry<KEY, VALUE> {
-        return registryMap[key] as Registry<KEY, VALUE>
+        return registryMap[key] as ImmutableRegistry<KEY, VALUE>
     }
 }
