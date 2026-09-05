@@ -2,8 +2,17 @@ package org.crux.slot
 
 import org.crux.holder.AmountHolder
 
-interface ImmutableSlot<TYPE : AmountHolder<AMOUNT_TYPE>, AMOUNT_TYPE> {
+interface ImmutableSlot<TYPE> {
     val content: TYPE
+}
+
+open class Slot<TYPE>(
+    override var content: TYPE
+) : ImmutableSlot<TYPE>
+
+
+interface ImmutableMandateSlot<TYPE : AmountHolder<AMOUNT_TYPE>, AMOUNT_TYPE> : ImmutableSlot<TYPE> {
+    override val content: TYPE
     val amount: AMOUNT_TYPE
     val maxAmount: AMOUNT_TYPE
 }
@@ -18,10 +27,15 @@ interface ImmutableSlot<TYPE : AmountHolder<AMOUNT_TYPE>, AMOUNT_TYPE> {
  * @property amount 現在の個数
  * @property maxAmount 許容される最大個数
  */
-class Slot<TYPE : AmountHolder<AMOUNT_TYPE>, AMOUNT_TYPE>(
-    override var content: TYPE,
-) : ImmutableSlot<TYPE, AMOUNT_TYPE> {
+open class MandateSlot<TYPE : AmountHolder<AMOUNT_TYPE>, AMOUNT_TYPE>(
+    content: TYPE
+) : Slot<TYPE>(content), ImmutableMandateSlot<TYPE, AMOUNT_TYPE> {
 
+    override var content: TYPE = content
+        set(value) {
+            field = value
+            amount = value.amount
+        }
     override var amount: AMOUNT_TYPE = content.amount
         set(value) {
             field = value

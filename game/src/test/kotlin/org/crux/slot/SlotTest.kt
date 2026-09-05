@@ -7,7 +7,7 @@ import kotlin.test.assertEquals
 class SlotTest {
     @Test
     fun `supports get and put operations`() {
-        val slot = Slot(DummyTank(1))
+        val slot = MandateSlot(DummyTank(1))
         slot.content = DummyTank(0)
 
         assertEquals(0, slot.content.amount)
@@ -15,7 +15,7 @@ class SlotTest {
 
     @Test
     fun `can be made mutable mandate`() {
-        val slot = Slot(DummyTank(1))
+        val slot = MandateSlot(DummyTank(1))
         slot.content = DummyTank(0)
 
         slot.amount = 10
