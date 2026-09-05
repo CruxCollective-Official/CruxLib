@@ -23,7 +23,7 @@ data class ItemData<TYPE : Item> (
      * @return 読み取り専用に複製された [ValueMetaData] インスタンス
      */
     fun getMeta(): ValueMetaData {
-        return meta?.copy() ?: ValueMetaData(mapOf())
+        return meta?.copy() ?: ValueMetaData(emptyMap())
     }
 
     /**

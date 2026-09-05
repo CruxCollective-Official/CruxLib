@@ -7,7 +7,7 @@ package org.crux.holder
  * @property amount 現在の個数
  * @property maxAmount 許容される最大個数
  */
-interface AmountHolder<AMOUNT_TYPE : Number> {
+interface AmountHolder<AMOUNT_TYPE> {
     var amount: AMOUNT_TYPE
     val maxAmount: AMOUNT_TYPE
 }

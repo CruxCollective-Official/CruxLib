@@ -1,6 +1,7 @@
 package org.crux.factory
 
 import org.crux.collection.Context
+import org.crux.collection.EmptyContext
 import org.crux.context.FactoryContext
 
 class Factory<PRODUCT, MODULE_TYPE : FactoryModule<PRODUCT>> {
@@ -12,22 +13,23 @@ class Factory<PRODUCT, MODULE_TYPE : FactoryModule<PRODUCT>> {
         modules: List<MODULE_TYPE>,
         other: PRODUCT
     ): PRODUCT {
+        val remarksContext = remarks ?: EmptyContext
         val context = FactoryContext(newProduct)
 
         for (module in modules) {
-            module.read(remarks, context, other)
+            module.read(remarksContext, context, other)
         }
 
         for (module in modules) {
-            module.update(remarks, updateContext, context)
+            module.update(remarksContext, updateContext, context)
         }
 
         for (module in modules) {
-            module.process(remarks, context)
+            module.process(remarksContext, context)
         }
 
         for (module in modules) {
-            module.reflect(remarks, context)
+            module.reflect(remarksContext, context)
         }
 
         return context.product
@@ -38,12 +40,14 @@ class Factory<PRODUCT, MODULE_TYPE : FactoryModule<PRODUCT>> {
         generateContext: FactoryContext<PRODUCT>,
         modules: List<MODULE_TYPE>
     ): PRODUCT {
+        val remarksContext = remarks ?: EmptyContext
+
         for (module in modules) {
-            module.process(remarks, generateContext)
+            module.process(remarksContext, generateContext)
         }
 
         for (module in modules) {
-            module.reflect(remarks, generateContext)
+            module.reflect(remarksContext, generateContext)
         }
 
         return generateContext.product
