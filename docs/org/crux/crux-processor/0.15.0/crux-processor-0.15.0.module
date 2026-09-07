@@ -1,0 +1,80 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "org.crux",
+    "module": "crux-processor",
+    "version": "0.15.0",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "9.3.0"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 21,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "files": [
+        {
+          "name": "crux-processor-0.15.0.jar",
+          "url": "crux-processor-0.15.0.jar",
+          "size": 2946,
+          "sha512": "4dbf95242f8114b3849bd117ea93d89a7a6314c185778406225c69328d601b4389e4ccacb31f70619876d13663b2133da1dba28a1992ccc1fce8c79bd7356d4a",
+          "sha256": "70b5c40e60df5caa052465fbd141af8563d02c6243f5fc78f1c00729b2f84cdf",
+          "sha1": "81d75976639ad050fbef6352f78bf016ec9a6b29",
+          "md5": "444fcc71f5b5a9ddd45fb12cbddca055"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 21,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "crux-processor-0.15.0.jar",
+          "url": "crux-processor-0.15.0.jar",
+          "size": 2946,
+          "sha512": "4dbf95242f8114b3849bd117ea93d89a7a6314c185778406225c69328d601b4389e4ccacb31f70619876d13663b2133da1dba28a1992ccc1fce8c79bd7356d4a",
+          "sha256": "70b5c40e60df5caa052465fbd141af8563d02c6243f5fc78f1c00729b2f84cdf",
+          "sha1": "81d75976639ad050fbef6352f78bf016ec9a6b29",
+          "md5": "444fcc71f5b5a9ddd45fb12cbddca055"
+        }
+      ]
+    },
+    {
+      "name": "sourcesElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "crux-processor-0.15.0-sources.jar",
+          "url": "crux-processor-0.15.0-sources.jar",
+          "size": 1806,
+          "sha512": "266ccc08889fefebf6646660bee4ce51a8bc71306481905f70aab3248aebdac47bebfd4a54bfc474f64e55d85ba6aacc42b33dded41e35c237b4ff33b22e2d44",
+          "sha256": "586bd11c2cd1beaaa45cec04fccf5fd8b6034c55be07dac68871e5b98e074b16",
+          "sha1": "b8a1839bc300900c967b9ee6bcf61864db2fc9cd",
+          "md5": "7e24cbe862ef9405eb9520fd01776ce2"
+        }
+      ]
+    }
+  ]
+}
