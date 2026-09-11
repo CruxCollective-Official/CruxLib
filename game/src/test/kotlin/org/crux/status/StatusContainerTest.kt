@@ -2,61 +2,41 @@ package org.crux.status
 
 import dummy.status.DummyCalculateType
 import dummy.status.DummyStatus
-import dummy.status.DummyStatusStepType
+import dummy.status.DummyStatusStep
 import org.crux.annotations.InternalCruxApi
 import kotlin.test.Test
 import kotlin.test.assertEquals
+import kotlin.test.assertNull
 
 @InternalCruxApi
 class StatusContainerTest {
-    private val status: Status = DummyStatus()
-    private val statusStepType: StatusStepType = DummyStatusStepType.TEST.type
-    private val calculateType: CalculateType = DummyCalculateType.ADDITION.type
+    private val status = DummyStatus()
+    private val stepType = DummyStatusStep.TEST.statusStep
+    private val calculateModifier = DummyCalculateType.ADDITIONAL.calculateModifier
 
-    private val testKey = StatusModifierKey(status, statusStepType, calculateType)
+    private val statusModifierKey = StatusModifierKey(status, stepType, calculateModifier)
 
     @Test
-    fun `add and get status modifier value`() {
-        val container = StatusContainer()
+    fun `can use add and get on the status container`() {
+        val container = MutableStatusContainer(0)
 
-        container.add(testKey, 10.0)
-        container.add(testKey, 10.0)
-        assertEquals(20.0, container.get(testKey))
+        container[statusModifierKey] = 10
+
+        assertEquals(10, container[statusModifierKey])
     }
 
     @Test
-    fun `filter and retrieve from the status container`() {
-        val container = StatusContainer()
-        container.add(testKey, 10.0)
+    fun `if the value of the key is null it can be treated as default value`() {
+        val defaultValue = 0
+        val container = MutableStatusContainer(defaultValue)
 
-        val statusContainer = container.filterStatus(status)
-        val stepTypeContainer = container.filterStatusStepType(statusStepType)
-        val calculateTypeContainer = container.filterCalculateType(calculateType)
-
-        assertEquals(10.0, statusContainer.get(testKey))
-        assertEquals(10.0, stepTypeContainer.get(testKey))
-        assertEquals(10.0, calculateTypeContainer.get(testKey))
+        assertEquals(defaultValue, container[statusModifierKey])
     }
 
     @Test
-    fun `can copy the status container`() {
-        val container = StatusContainer()
-        container.add(testKey, 10.0)
-
-        val copyContainer = container.copy()
-        assertEquals(10.0, copyContainer.get(testKey))
-    }
-
-    @Test
-    fun `can merge status containers`() {
-        val container1 = StatusContainer()
-        container1.add(testKey, 10.0)
-
-        val container2 = StatusContainer()
-        container2.add(StatusModifierKey(status, statusStepType, calculateType), 10.0)
-
-        container1.merge(container2)
-
-        assertEquals(20.0, container1.get(testKey))
+    fun `filtering is possible`() {
+        val container = MutableStatusContainer(0)
+        container[statusModifierKey] = 10
+        assertEquals(10, container.filterStatus(status)[statusModifierKey])
     }
 }

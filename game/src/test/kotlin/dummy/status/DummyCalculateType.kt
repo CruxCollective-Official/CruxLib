@@ -1,13 +1,17 @@
 package dummy.status
 
-import org.crux.Crux.CRUX_KEY_MANAGER
 import org.crux.annotations.InternalCruxApi
-import org.crux.status.CalculateType
+import org.crux.modify.CalculateModifier
 
 @InternalCruxApi
 enum class DummyCalculateType(
-    val type: CalculateType
+    val calculateModifier: CalculateModifier<Int>
 ) {
-    ADDITION(CalculateType(CRUX_KEY_MANAGER.create("addition"))),
-    MULTIPLICATION(CalculateType(CRUX_KEY_MANAGER.create("multiplication"))),
+    ADDITIONAL(
+        object : CalculateModifier<Int>(1) {
+            override fun calc(target: Int, value: Int): Int {
+                return target + value
+            }
+        }
+    )
 }
