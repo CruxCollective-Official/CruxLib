@@ -1,0 +1,116 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "org.crux",
+    "module": "crux-game",
+    "version": "0.16.0",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "9.3.0"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.jvm.version": 21,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.4.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "crux-game-0.16.0.jar",
+          "url": "crux-game-0.16.0.jar",
+          "size": 26780,
+          "sha512": "2e5cd0d89e50fcd206f18bad01ae717de8d5a7bef1b4afaae11ad7d33e29677553a2b723ca51caf2364837d7ee384f19513d5115ada98f75d101d8a623d3f953",
+          "sha256": "b2c98e3023b3697993e9bcc18a1447b1b19fc10d3343d1e6f83632f75bb1b069",
+          "sha1": "25b881bd6c768a1d6048c52a2120a738ca57895d",
+          "md5": "4b343235ab5b64a78745cb2e525525f2"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.jvm.version": 21,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.crux",
+          "module": "crux-annotations",
+          "version": {
+            "requires": "0.16.0"
+          }
+        },
+        {
+          "group": "org.crux",
+          "module": "crux-system",
+          "version": {
+            "requires": "0.16.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.4.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "crux-game-0.16.0.jar",
+          "url": "crux-game-0.16.0.jar",
+          "size": 26780,
+          "sha512": "2e5cd0d89e50fcd206f18bad01ae717de8d5a7bef1b4afaae11ad7d33e29677553a2b723ca51caf2364837d7ee384f19513d5115ada98f75d101d8a623d3f953",
+          "sha256": "b2c98e3023b3697993e9bcc18a1447b1b19fc10d3343d1e6f83632f75bb1b069",
+          "sha1": "25b881bd6c768a1d6048c52a2120a738ca57895d",
+          "md5": "4b343235ab5b64a78745cb2e525525f2"
+        }
+      ]
+    },
+    {
+      "name": "sourcesElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "crux-game-0.16.0-sources.jar",
+          "url": "crux-game-0.16.0-sources.jar",
+          "size": 7108,
+          "sha512": "35205f0bf7c1f79c1d7f6a6708e136d7896a2ea7a08b33e536f3459e8031e32464544d4df2f2b19a79a28059eeb97ca3716164ee3ff04902f12a9f03f3b973c1",
+          "sha256": "12fd79327e17382122ea8d5eaccc66a13fe74cc0a5fe494093fd1f11bb524a7d",
+          "sha1": "beeca6ccbb6f1a7b2e8f01ee55381d065bf83189",
+          "md5": "77c718e2bbc57f2e588d6238af38241b"
+        }
+      ]
+    }
+  ]
+}
