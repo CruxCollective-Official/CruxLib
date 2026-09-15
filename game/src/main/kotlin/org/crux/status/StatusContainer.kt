@@ -14,6 +14,11 @@ class ImmutableStatusContainer<TYPE>(
 		return statusMap[key] ?: defaultValue
 	}
 
+	operator fun get(keyStatus: Status, keyStep: StatusStep, keyCalculateModifier: CalculateModifier<TYPE>): TYPE {
+		val modifierKey = StatusModifierKey(keyStatus, keyStep, keyCalculateModifier)
+		return statusMap[modifierKey] ?: defaultValue
+	}
+
 	fun filterStatus(filter: Status) = filterBy { it.status == filter }
 
 	fun filterStep(filter: StatusStep) = filterBy { it.step == filter }
@@ -35,8 +40,18 @@ class MutableStatusContainer<TYPE>(
 		return statusMap[key] ?: defaultValue
 	}
 
+	operator fun get(keyStatus: Status, keyStep: StatusStep, keyCalculateModifier: CalculateModifier<TYPE>): TYPE {
+		val modifierKey = StatusModifierKey(keyStatus, keyStep, keyCalculateModifier)
+		return statusMap[modifierKey] ?: defaultValue
+	}
+
 	operator fun set(key: StatusModifierKey<TYPE>, value: TYPE) {
 		statusMap[key] = value
+	}
+
+	operator fun set(keyStatus: Status, keyStep: StatusStep, keyCalculateModifier: CalculateModifier<TYPE>, value: TYPE) {
+		val modifierKey = StatusModifierKey(keyStatus, keyStep, keyCalculateModifier)
+		statusMap[modifierKey] = value
 	}
 
 	fun toImmutable(): ImmutableStatusContainer<TYPE> {
